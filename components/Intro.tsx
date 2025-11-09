@@ -1,7 +1,5 @@
-// components/Intro.tsx
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Intro() {
@@ -14,7 +12,8 @@ export default function Intro() {
           <div className="s-intro__content-text">
             <div className="s-intro__content-pretitle text-pretitle">Hello</div>
             <h1 className="s-intro__content-title">
-              I'm Michael Antoni <br />a Software Engineer base in Philippines.
+              I'm Michael Antoni <br />a Senior Software Engineer base in
+              Philippines.
             </h1>
 
             <div className="s-intro__content-btns">

@@ -1,4 +1,3 @@
-// components/Numbers.tsx
 export default function Numbers() {
   return (
     <>

@@ -1,4 +1,3 @@
-// components/About.tsx
 export default function About() {
   return (
     <section id="about" className="s-about target-section">

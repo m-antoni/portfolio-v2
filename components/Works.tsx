@@ -1,4 +1,3 @@
-// components/Works.tsx
 export default function Works() {
   return (
     <>
@@ -17,28 +16,35 @@ export default function Works() {
           {/* Entry 1 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-turban.jpg"
+              href="images/folio/gallery/g-datacenter.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: White Knit Cap; description: .entry__desc-01"
+              data-glightbox="title: Data Center v2 - (MERN Stack + TypeScript); description: .entry__desc-01"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/white_turban.jpg"
-                  srcSet="images/folio/white_turban.jpg 1x, images/folio/white_turban@2x.jpg 2x"
+                  src="images/folio/datacenter.jpg"
+                  srcSet="images/folio/datacenter.jpg 1x, images/folio/datacenter@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">White Knit Cap</h4>
-                <div className="entry__cat">Frontend Design</div>
+                <h4 className="entry__title">Data Center v2</h4>
+                <div className="entry__cat">MERN Stack - TypeSCript</div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-01">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                A full-stack data visualization dashboard built with React
+                (TypeScript) and Node.js (Express + TypeScript). The client app
+                fetches data from a custom Node API, which in turn retrieves
+                data from a third-party API, processes it, and stores the
+                results in MongoDB..{" "}
+                <a
+                  href="https://github.com/m-antoni/datacenter-api-vr2"
+                  target="_blank"
+                >
+                  Project Link
+                </a>
               </p>
             </div>
           </div>
@@ -47,28 +53,38 @@ export default function Works() {
           {/* Entry 2 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-woodcraft.jpg"
+              href="images/folio/gallery/g-eshop.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: WoodCraft; description: .entry__desc-02"
+              data-glightbox="title: eshop - (MERN Stack + Redux, Paypal sandbox); description: .entry__desc-02"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/woodcraft.jpg"
-                  srcSet="images/folio/woodcraft.jpg 1x, images/folio/woodcraft@2x.jpg 2x"
+                  src="images/folio/eshop.jpg"
+                  srcSet="images/folio/eshop.jpg 1x, images/folio/eshop@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">WoodCraft</h4>
-                <div className="entry__cat">Product Design</div>
+                <h4 className="entry__title">e-shop</h4>
+                <div className="entry__cat">
+                  MERN Stack + Redux for state management
+                </div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-02">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                A complete eCommerce web application built using the MERN stack
+                (MongoDB, Express, React + Redux, Node.js). This project
+                includes a secure backend API and frontend interface where users
+                can browse products, add items to their cart, and complete
+                purchases using PayPal or COD..{" "}
+                <a
+                  href="https://github.com/m-antoni/e-commerce-mern-api"
+                  target="_blank"
+                >
+                  Project Link
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -77,28 +93,34 @@ export default function Works() {
           {/* Entry 3 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-tulips.jpg"
+              href="images/folio/gallery/g-quiz.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: Caffeine & Tulips; description: .entry__desc-03"
+              data-glightbox="title: Quizp App - (React, React Hooks Firebase, Firebase Auth); description: .entry__desc-03"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/caffeine_and_tulips.jpg"
-                  srcSet="images/folio/caffeine_and_tulips.jpg 1x, images/folio/caffeine_and_tulips@2x.jpg 2x"
+                  src="images/folio/quiz.jpg"
+                  srcSet="images/folio/quiz.jpg 1x, images/folio/quiz@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">Caffeine & Tulips</h4>
-                <div className="entry__cat">Brand Identity</div>
+                <h4 className="entry__title">Quizp App</h4>
+                <div className="entry__cat">
+                  React, React Hooks Firebase, Firebase Auth
+                </div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-03">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                A simple and interactive quiz application built with React,
+                Redux, and Firebase Firestore. The app dynamically fetches
+                questions from the Open Trivia Database (opentdb.com) and stores
+                player scores in Firestore. .{" "}
+                <a href="https://github.com/m-antoni/quiz-app" target="_blank">
+                  Project Link
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -107,28 +129,39 @@ export default function Works() {
           {/* Entry 4 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-grayscale.jpg"
+              href="images/folio/gallery/g-weather.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: Grayscale; description: .entry__desc-04"
+              data-glightbox="title: Weather App - React Hooks, Context API with openweathermap API; description: .entry__desc-04"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/grayscale.jpg"
-                  srcSet="images/folio/grayscale.jpg 1x, images/folio/grayscale@2x.jpg 2x"
+                  src="images/folio/weather.jpg"
+                  srcSet="images/folio/weather.jpg 1x, images/folio/weather@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">Grayscale</h4>
-                <div className="entry__cat">Product Design</div>
+                <h4 className="entry__title">Weather App</h4>
+                <div className="entry__cat">
+                  {" "}
+                  React Hooks, Context API with openweathermap API
+                </div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-04">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                A pretty simple and straightforward weather forecast application
+                built with React and the React Context API. It allows users to
+                search for weather forecasts by city or country and even compare
+                two weather forecasts side-by-side. This project integrates with
+                the OpenWeatherMap API to fetch live and accurate weather data..{" "}
+                <a
+                  href="https://github.com/m-antoni/weather-app"
+                  target="_blank"
+                >
+                  Project Link
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -137,28 +170,34 @@ export default function Works() {
           {/* Entry 5 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-lamp.jpg"
+              href="images/folio/gallery/g-login.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: The Lamp; description: .entry__desc-05"
+              data-glightbox="title: Attendance Monitoring System using QRCode - (Laravel and MySQL); description: .entry__desc-05"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/lamp.jpg"
-                  srcSet="images/folio/lamp.jpg 1x, images/folio/lamp@2x.jpg 2x"
+                  src="images/folio/login.jpg"
+                  srcSet="images/folio/login.jpg 1x, images/folio/login@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">The Lamp</h4>
-                <div className="entry__cat">Brand Identity</div>
+                <h4 className="entry__title">
+                  Attendance Monitoring System using QRCode
+                </h4>
+                <div className="entry__cat">Laravel and MySQL</div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-05">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                This project was created on October 2020 as a school project.
+                It’s a simple attendance monitoring system built with Laravel
+                and MySQL that uses QR codes for employee and intern time
+                tracking..{" "}
+                <a href="https://github.com/m-antoni/login" target="_blank">
+                  Project Link
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -167,28 +206,37 @@ export default function Works() {
           {/* Entry 6 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-tropical.jpg"
+              href="images/folio/gallery/g-is.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: Tropical; description: .entry__desc-06"
+              data-glightbox="title: Is; description: .entry__desc-06"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/tropical.jpg"
-                  srcSet="images/folio/tropical.jpg 1x, images/folio/tropical@2x.jpg 2x"
+                  src="images/folio/is.jpg"
+                  srcSet="images/folio/is.jpg 1x, images/folio/is@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">Tropical</h4>
-                <div className="entry__cat">Frontend Design</div>
+                <h4 className="entry__title">
+                  Advanced and Interactive Learning System
+                </h4>
+                <div className="entry__cat">Microsoft Visual Fox Pro</div>
               </div>
             </a>
             <div className="glightbox-desc entry__desc-06">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Inventore ipsum iste soluta fugiat, impedit illum ducimus
-                deleniti facilis ab, tempora non! Nisi, tempora provident.{" "}
-                <a href="https://www.behance.net/">Project Link</a>.
+                LThis project was a school project developed in 2016 as part of
+                an academic requirement focused on creating an educational and
+                interactive learning environment for students using Microsoft
+                Visual FoxPro..{" "}
+                <a
+                  href="https://github.com/m-antoni/learning_system"
+                  target="_blank"
+                >
+                  Project Link
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -197,7 +245,7 @@ export default function Works() {
         {/* folio entries */}
 
         {/* Testimonials */}
-        <div className="row s-testimonials">
+        <div id="testimonials" className="row s-testimonials target-section">
           <div className="column xl-12">
             <h3 className="s-testimonials__header">Testimonials</h3>
 
@@ -213,7 +261,7 @@ export default function Works() {
                     />
                     <cite className="s-testimonials__cite">
                       <strong>Jimar Zape</strong>
-                      <span>Principal Software Engineer @Nokkel</span>
+                      <span>Principal Software Engineer at Nokkel</span>
                     </cite>
                   </div>
                   <p className="text-justify">
@@ -228,13 +276,13 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/alejandro.png"
+                      src="images/avatars/alejandro.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
                     <cite className="s-testimonials__cite">
                       <strong>Alejandro Mendoza</strong>
-                      <span>Network Infrastructure Engineer @Indra</span>
+                      <span>Network Infrastructure Engineer at Indra</span>
                     </cite>
                   </div>
                   <p className="text-justify">
@@ -247,17 +295,39 @@ export default function Works() {
                 </div>
                 {/* end s-testimonials__slide */}
 
+                {/* Slide 2 */}
+                <div className="s-testimonials__slide swiper-slide">
+                  <div className="s-testimonials__author">
+                    <img
+                      src="images/avatars/andrew.jpg"
+                      alt="Author image"
+                      className="s-testimonials__avatar"
+                    />
+                    <cite className="s-testimonials__cite">
+                      <strong>Al Andrew Paul Beltran</strong>
+                      <span>Full stack Developer at Maya</span>
+                    </cite>
+                  </div>
+                  <p className="text-justify">
+                    Mike is a hardworking full stack engineer and he can easily
+                    adopt with the new technology and he has an eagerness to
+                    learn and also has a capability to handle stress and any
+                    complicated project situation.
+                  </p>
+                </div>
+                {/* end s-testimonials__slide */}
+
                 {/* Slide 3 */}
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/marvin.png"
+                      src="images/avatars/marvin.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
                     <cite className="s-testimonials__cite">
                       <strong>John Marvin Roque</strong>
-                      <span>Senior Front-end Developer @Global Payments</span>
+                      <span>Senior Front-end Developer at Global Payments</span>
                     </cite>
                   </div>
                   <p className="text-justify">
@@ -275,21 +345,21 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/user-06.jpg"
+                      src="images/avatars/neil.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
                     <cite className="s-testimonials__cite">
-                      <strong>Henry Ford</strong>
-                      <span>Ford Motor Co.</span>
+                      <strong>Neil James Tony Perdigon</strong>
+                      <span>Software Engineer at Accenture</span>
                     </cite>
                   </div>
-                  <p>
-                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc
-                    ac augue. Fusce vel dui. In ac felis quis tortor malesuada
-                    pretium. Curabitur vestibulum aliquam leo. Qui sed at
-                    corrupti expedita voluptas odit. Nihil ea quia nesciunt.
-                    Ducimus aut sed ipsam.
+                  <p className="text-justify">
+                    Michael is like my mentor when it comes to programming and
+                    life lessons, he's my go-to people when i need some advice
+                    or career direction. he's very passionate about what he's
+                    doing right now that makes his surroundings follow his
+                    directions.
                   </p>
                 </div>
                 {/* end s-testimonials__slide */}

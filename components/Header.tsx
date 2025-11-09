@@ -5,7 +5,7 @@ import React from "react";
 export default function Header() {
   return (
     // <!-- s-header -->
-    <header className="s-header">
+    <header className="s-header ">
       <div className="row s-header__inner">
         <div className="s-header__block">
           <div className="s-header__logo">
@@ -36,6 +36,11 @@ export default function Header() {
             <li>
               <a className="smoothscroll" href="#works">
                 Works
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#testimonials">
+                Testimonials
               </a>
             </li>
             <li>
