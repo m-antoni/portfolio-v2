@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Michael Antoni",
-  viewport: "width=device-width, initial-scale=1",
+  // viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       { url: "/favicon-v2.png", sizes: "32x32", type: "image/png" },
@@ -19,6 +19,13 @@ export const metadata = {
     apple: "/favicon-v2.png",
   },
   manifest: "/site.webmanifest",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -42,14 +49,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         {/* Page wrapper */}
         <div id="page" className="s-pagewrap">
-          {/* Header */}
-          <Header />
-
           {/* Main content */}
           {children}
-
-          {/* Footer */}
-          <Footer />
         </div>
         {/* end of page wrapper */}
 

@@ -9,11 +9,14 @@ import Numbers from "@/components/Numbers";
 export default function HomePage() {
   return (
     <>
+      {/* Header */}
+      <Header />
       <Intro />
       <About />
       <Works />
       {/* <Testimonial /> */}
       <Numbers />
+      <Footer />
     </>
   );
 }
