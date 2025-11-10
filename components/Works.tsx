@@ -255,27 +255,6 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/jimar.jpeg"
-                      alt="Author image"
-                      className="s-testimonials__avatar"
-                    />
-                    <cite className="s-testimonials__cite">
-                      <strong>Jimar Zape</strong>
-                      <span>Principal Software Engineer at Nokkel</span>
-                    </cite>
-                  </div>
-                  <p className="text-justify">
-                    Michael is a very industrious and hardworking colleague that
-                    I had ever work with. He has a passion in programming which
-                    causing him to improve his skills rapidly.
-                  </p>
-                </div>
-                {/* end s-testimonials__slide */}
-
-                {/* Slide 2 */}
-                <div className="s-testimonials__slide swiper-slide">
-                  <div className="s-testimonials__author">
-                    <img
                       src="images/avatars/alejandro.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
@@ -293,9 +272,31 @@ export default function Works() {
                     deserves.
                   </p>
                 </div>
+
                 {/* end s-testimonials__slide */}
 
                 {/* Slide 2 */}
+                <div className="s-testimonials__slide swiper-slide">
+                  <div className="s-testimonials__author">
+                    <img
+                      src="images/avatars/jimar.jpeg"
+                      alt="Author image"
+                      className="s-testimonials__avatar"
+                    />
+                    <cite className="s-testimonials__cite">
+                      <strong>Jimar Zape</strong>
+                      <span>Principal Software Engineer at Nokkel</span>
+                    </cite>
+                  </div>
+                  <p className="text-justify">
+                    Michael is a very industrious and hardworking colleague that
+                    I had ever work with. He has a passion in programming which
+                    causing him to improve his skills rapidly.
+                  </p>
+                </div>
+                {/* end s-testimonials__slide */}
+
+                {/* Slide 3 */}
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img

@@ -3920,14 +3920,14 @@ td:last-child {
  *
  *
  * ------------------------------------------------------------------- */
-/*.s-works {
-    padding-top   : var(--vspace-6);
-    padding-bottom: var(--vspace-1);
+.s-works {
+  padding-top: var(--vspace-6);
+  padding-bottom: var(--vspace-1);
 }
 
 .folio-entries {
-    --width-grid-max: 1400px;
-    margin-top      : var(--vspace-0_5);
+  --width-grid-max: 1400px;
+  margin-top: var(--vspace-0_5);
 }
 
 /* ------------------------------------------------------------------- 
