@@ -105,10 +105,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 
-  background-color: #f0f0f0 !important; /* optional, for card background */
-  color: rgb(39, 40, 34) !important; /* optional, for text color */
   border-radius: 10px !important; /* optional, rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important; /* shadow */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important; /* shadow */
 }
 /* Arrow color to match card */
 .vertical-timeline-element-content::before {
