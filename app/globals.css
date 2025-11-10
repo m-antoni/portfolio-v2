@@ -114,14 +114,46 @@
 }
 
 .s-career {
-  /* padding-top: 70px; */
-  margin-bottom: 100px;
   background-color: var(--color-gray-10);
   color: var(--color-text-light);
 }
 
-.s-career-title {
-  margin-top: 100px;
+/* End - Career Styles */
+
+/* Intro Styles */
+@media screen and (max-width: 1280px) {
+  .s-intro__content-title {
+    font-size: 5rem !important;
+  }
 }
 
-/* End - Career Styles */
+@media screen and (max-width: 720px) {
+  .s-intro__content-title {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .s-intro__content-title {
+    font-size: 2rem !important;
+    margin-bottom: -10px !important;
+  }
+}
+
+/* End Intro Styles */
+
+/* Section Component Styles */
+
+#career {
+  padding-top: 100px;
+}
+
+#works {
+  margin-top: 170px;
+}
+
+#testimonials {
+  margin-top: 170px;
+}
+
+/* End Section Component Styles */

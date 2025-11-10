@@ -2,14 +2,10 @@ export default function Works() {
   return (
     <>
       {/* # works ================================================== */}
-      <section
-        id="testimonials"
-        className="target-section mt-10"
-        style={{ marginTop: "200px" }}
-      >
+      <section id="testimonials" className="target-section">
         <div className="row">
           <div className="column xl-12">
-            <div className="section-header" data-num="03">
+            <div className="section-header" data-num="04">
               <h2 className="text-display-title">Testimonials.</h2>
             </div>
           </div>
