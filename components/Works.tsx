@@ -16,14 +16,14 @@ export default function Works() {
           {/* Entry 1 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-datacenter.jpg"
+              href="/images/folio/gallery/g-datacenter.jpg"
               className="entry__link glightbox"
               data-glightbox="title: Data Center v2 - (MERN Stack + TypeScript); description: .entry__desc-01"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/datacenter.jpg"
-                  srcSet="images/folio/datacenter.jpg 1x, images/folio/datacenter@2x.jpg 2x"
+                  src="/images/folio/datacenter.jpg"
+                  srcSet="/images/folio/datacenter.jpg 1x, /images/folio/datacenter@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -53,14 +53,14 @@ export default function Works() {
           {/* Entry 2 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-eshop.jpg"
+              href="/images/folio/gallery/g-eshop.jpg"
               className="entry__link glightbox"
               data-glightbox="title: eshop - (MERN Stack + Redux, Paypal sandbox); description: .entry__desc-02"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/eshop.jpg"
-                  srcSet="images/folio/eshop.jpg 1x, images/folio/eshop@2x.jpg 2x"
+                  src="/images/folio/eshop.jpg"
+                  srcSet="/images/folio/eshop.jpg 1x, /images/folio/eshop@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -93,14 +93,14 @@ export default function Works() {
           {/* Entry 3 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-quiz.jpg"
+              href="/images/folio/gallery/g-quiz.jpg"
               className="entry__link glightbox"
               data-glightbox="title: Quizp App - (React, React Hooks Firebase, Firebase Auth); description: .entry__desc-03"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/quiz.jpg"
-                  srcSet="images/folio/quiz.jpg 1x, images/folio/quiz@2x.jpg 2x"
+                  src="/images/folio/quiz.jpg"
+                  srcSet="/images/folio/quiz.jpg 1x, /images/folio/quiz@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -129,14 +129,14 @@ export default function Works() {
           {/* Entry 4 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-weather.jpg"
+              href="/images/folio/gallery/g-weather.jpg"
               className="entry__link glightbox"
               data-glightbox="title: Weather App - React Hooks, Context API with openweathermap API; description: .entry__desc-04"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/weather.jpg"
-                  srcSet="images/folio/weather.jpg 1x, images/folio/weather@2x.jpg 2x"
+                  src="/images/folio/weather.jpg"
+                  srcSet="/images/folio/weather.jpg 1x, /images/folio/weather@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -170,14 +170,14 @@ export default function Works() {
           {/* Entry 5 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-login.jpg"
+              href="/images/folio/gallery/g-login.jpg"
               className="entry__link glightbox"
               data-glightbox="title: Attendance Monitoring System using QRCode - (Laravel and MySQL); description: .entry__desc-05"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/login.jpg"
-                  srcSet="images/folio/login.jpg 1x, images/folio/login@2x.jpg 2x"
+                  src="/images/folio/login.jpg"
+                  srcSet="/images/folio/login.jpg 1x, /images/folio/login@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -206,14 +206,14 @@ export default function Works() {
           {/* Entry 6 */}
           <div className="column entry">
             <a
-              href="images/folio/gallery/g-is.jpg"
+              href="/images/folio/gallery/g-is.jpg"
               className="entry__link glightbox"
               data-glightbox="title: Is; description: .entry__desc-06"
             >
               <div className="entry__thumb">
                 <img
-                  src="images/folio/is.jpg"
-                  srcSet="images/folio/is.jpg 1x, images/folio/is@2x.jpg 2x"
+                  src="/images/folio/is.jpg"
+                  srcSet="/images/folio/is.jpg 1x, /images/folio/is@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -255,7 +255,7 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/alejandro.jpg"
+                      src="/images/avatars/alejandro.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
@@ -279,7 +279,7 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/jimar.jpeg"
+                      src="/images/avatars/jimar.jpeg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
@@ -300,7 +300,7 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/andrew.jpg"
+                      src="/images/avatars/andrew.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
@@ -322,7 +322,7 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/marvin.jpg"
+                      src="/images/avatars/marvin.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
@@ -346,7 +346,7 @@ export default function Works() {
                 <div className="s-testimonials__slide swiper-slide">
                   <div className="s-testimonials__author">
                     <img
-                      src="images/avatars/neil.jpg"
+                      src="/images/avatars/neil.jpg"
                       alt="Author image"
                       className="s-testimonials__avatar"
                     />
