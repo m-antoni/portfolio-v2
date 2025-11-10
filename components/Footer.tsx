@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="row s-footer__buttons">
         <div className="column xl-6 tab-12">
           <a
-            href="mailto:#0"
+            href="mailto:#michaelantoni.tech@gmail.com"
             className="btn btn--primary btn--large u-fullwidth"
           >
             Message Me
@@ -88,7 +88,10 @@ export default function Footer() {
         </div>
 
         <div className="column xl-6 tab-12">
-          <a href="#0" className="btn btn--stroke btn--large u-fullwidth">
+          <a
+            href="/michael_antoni_cv.pdf"
+            className="btn btn--stroke btn--large u-fullwidth"
+          >
             Get My CV
           </a>
         </div>
@@ -171,7 +174,6 @@ export default function Footer() {
           >
             <path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z" />
           </svg>
-          {/* <FaArrowUp /> */}
         </a>
         <span>Back To Top</span>
       </div>

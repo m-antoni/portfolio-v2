@@ -36,7 +36,7 @@ export default function Career() {
                 }}
                 date="2021 - Present"
                 iconStyle={{
-                  background: "#E57F60",
+                  background: "#28282B",
                   color: "rgb(39, 40, 34)",
                 }}
                 icon={<FontAwesomeIcon icon={faBriefcase} />}
@@ -61,7 +61,7 @@ export default function Career() {
                 }}
                 date="2022 - 2022"
                 iconStyle={{
-                  background: "#E57F60",
+                  background: "#28282B",
                   color: "rgb(39, 40, 34)",
                 }}
                 icon={<FontAwesomeIcon icon={faBriefcase} />}
@@ -84,7 +84,7 @@ export default function Career() {
                   borderRight: "7px solid white",
                 }}
                 iconStyle={{
-                  background: "#E57F60",
+                  background: "#28282B",
                   color: "rgb(39, 40, 34)",
                 }}
                 icon={<FontAwesomeIcon icon={faBriefcase} />}
@@ -107,7 +107,7 @@ export default function Career() {
                   borderRight: "7px solid white",
                 }}
                 iconStyle={{
-                  background: "#E57F60",
+                  background: "#28282B",
                   color: "rgb(39, 40, 34)",
                 }}
                 icon={<FontAwesomeIcon icon={faBriefcase} />}

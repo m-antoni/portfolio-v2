@@ -100,7 +100,7 @@
 /* Update the vertical timeline line black */
 .vertical-timeline::before {
   /* background-color: black ; */
-  width: 5px !important; /* optional: adjust thickness */
+  width: 4.5px !important; /* optional: adjust thickness */
 }
 
 /* Timeline card background */
