@@ -4225,12 +4225,6 @@ td:last-child {
  *
  *
  * ------------------------------------------------------------------- */
-.s-numbers {
-  padding-top: var(--vspace-5_5);
-  padding-bottom: var(--vspace-4);
-  background-color: var(--color-gray-10);
-  color: var(--color-text-light);
-}
 
 .s-numbers h5 {
   font-family: var(--font-1);

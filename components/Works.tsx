@@ -5,7 +5,7 @@ export default function Works() {
       <section id="works" className="s-works target-section">
         <div className="row">
           <div className="column xl-12">
-            <div className="section-header" data-num="02">
+            <div className="section-header" data-num="03">
               <h2 className="text-display-title">Selected Works.</h2>
             </div>
             {/* end section-header */}

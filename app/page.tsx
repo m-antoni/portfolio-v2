@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Works from "@/components/Works";
 import Testimonial from "@/components/Testimonials";
 import Numbers from "@/components/Numbers";
+import Career from "@/components/Career";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Header />
       <Intro />
       <About />
+      <Career />
       <Works />
       <Testimonial />
       <Numbers />

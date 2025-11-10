@@ -10,3 +10,118 @@
   opacity: 1;
   transform: translateY(0);
 } */
+
+/* Career Styles */
+
+.vertical-timeline-element p,
+.vertical-timeline-element h3,
+.vertical-timeline-element h4,
+.vertical-timeline-element span {
+  color: rgb(39, 40, 34); /* dark text for light background */
+}
+
+/* Timeline date */
+.vertical-timeline-element .vertical-timeline-element-date {
+  color: rgb(39, 40, 34); /* dark date text */
+}
+
+/* Icon inside circle */
+.svg-inline--fa {
+  color: white; /* keep icon white if circle is dark */
+}
+
+/* Optional: smaller screens adjustments */
+@media screen and (max-width: 1170px) {
+  .vertical-timeline-element .vertical-timeline-element-date {
+    color: rgb(39, 40, 34);
+  }
+}
+
+/* Update font sizes */
+.vertical-timeline-element .vertical-timeline-element-title {
+  /* font-family: var(--font-1); */
+  font-weight: 400;
+  font-size: 2rem; /* base size for small screens */
+}
+
+/* Timeline Subtitle */
+.vertical-timeline-element .vertical-timeline-element-subtitle {
+  font-size: 1.5rem; /* base size for small screens */
+  color: var(--color-text-light);
+  margin-top: 5px;
+}
+
+/* Timeline Paragraph */
+.vertical-timeline-element p {
+  font-size: 0.875rem; /* slightly smaller on mobile */
+}
+
+/* Timeline Date */
+.vertical-timeline-element .vertical-timeline-element-date {
+  margin-top: -10px;
+  font-size: 14px !important; /* base size for small screens */
+}
+
+/* Medium screens (≥768px) */
+@media screen and (min-width: 768px) {
+  .vertical-timeline-element .vertical-timeline-element-title {
+    font-size: 2.5rem;
+  }
+  .vertical-timeline-element .vertical-timeline-element-subtitle {
+    font-size: 2rem;
+  }
+  .vertical-timeline-element p {
+    font-size: 0.9375rem;
+  }
+  .vertical-timeline-element .vertical-timeline-element-date {
+    font-size: 16px;
+  }
+}
+
+/* Large screens (≥1170px) */
+@media screen and (min-width: 1170px) {
+  .vertical-timeline-element .vertical-timeline-element-title {
+    font-size: 3rem;
+  }
+  .vertical-timeline-element .vertical-timeline-element-subtitle {
+    font-size: 2.5rem;
+  }
+  .vertical-timeline-element p {
+    font-size: 0.9375rem;
+  }
+  .vertical-timeline-element .vertical-timeline-element-date {
+    font-size: 18px;
+  }
+}
+
+/* Update the vertical timeline line black */
+.vertical-timeline::before {
+  /* background-color: black ; */
+  width: 5px !important; /* optional: adjust thickness */
+}
+
+/* Timeline card background */
+.vertical-timeline-element-content {
+  /* background-color: #f0f0f0;
+  color: rgb(39, 40, 34);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* Arrow color to match card */
+.vertical-timeline-element-content::before {
+  /* border-right: 7px solid #f0f0f0; */
+}
+
+.s-career {
+  /* padding-top: 70px; */
+  margin-bottom: 100px;
+  background-color: var(--color-gray-10);
+  color: var(--color-text-light);
+}
+
+.s-career-title {
+  margin-top: 100px;
+}
+
+/* End - Career Styles */

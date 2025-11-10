@@ -30,6 +30,11 @@ export default function Header() {
               </a>
             </li>
             <li>
+              <a className="smoothscroll" href="#career">
+                Career
+              </a>
+            </li>
+            <li>
               <a className="smoothscroll" href="#works">
                 Works
               </a>
