@@ -55,8 +55,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* end of page wrapper */}
 
         {/* JS Scripts */}
+
         <Script src="/js/plugins.js" strategy="afterInteractive" />
         <Script src="/js/main.js" strategy="afterInteractive" />
+        {/* <Script src="/js/particles.min.js" strategy="afterInteractive" /> */}
+        {/* <Script src="/js/particles-init.js" strategy="afterInteractive" /> */}
       </body>
     </html>
   );

@@ -32,7 +32,7 @@ export default function Career() {
                   // color: "rgb(39, 40, 34)",
                 }}
                 contentArrowStyle={{
-                  borderRight: "7px solid white",
+                  borderRight: "10px solid white",
                 }}
                 date="2021 - Present"
                 iconStyle={{
@@ -57,7 +57,7 @@ export default function Career() {
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentArrowStyle={{
-                  borderRight: "7px solid white",
+                  borderRight: "10px solid white",
                 }}
                 date="2022 - 2022"
                 iconStyle={{
@@ -70,18 +70,19 @@ export default function Career() {
                   MERN Stack Developer
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Stealth Startup (Project based)
+                  Stealth Startup
                 </h4>
                 <p>
-                  Recruitment system development, API integration, and
-                  cross-team collaboration. using MER Stack & TypeScript
+                  A "Project-Based" gig involving the development of a
+                  recruitment system, API integration, and cross-team
+                  collaboration, using the MERN stack and TypeScript
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 date="2019 - 2021"
                 contentArrowStyle={{
-                  borderRight: "7px solid white",
+                  borderRight: "10px solid white",
                 }}
                 iconStyle={{
                   background: "#28282B",
@@ -104,7 +105,7 @@ export default function Career() {
                 className="vertical-timeline-element--work"
                 date="2014 - 2016"
                 contentArrowStyle={{
-                  borderRight: "7px solid white",
+                  borderRight: "10px solid white",
                 }}
                 iconStyle={{
                   background: "#28282B",

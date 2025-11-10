@@ -9,7 +9,7 @@ export default function Footer() {
     <footer id="footer" className="s-footer target-section">
       <div className="row">
         <div className="column lg-12">
-          <div className="section-header light-on-dark" data-num="03">
+          <div className="section-header light-on-dark" data-num="05">
             <h2 className="text-display-title">Get In Touch.</h2>
           </div>
         </div>

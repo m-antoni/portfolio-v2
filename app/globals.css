@@ -1,18 +1,13 @@
+/*********************************************************
+
+/* TailwindCSS Import */
 @import "tailwindcss";
 
-/* .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+/*********************************************************/
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-} */
-
-/* Career Styles */
-
+/*********************************************************
+/* Career &&  Vertical Timeline UI Styles */
+/*********************************************************/
 .vertical-timeline-element p,
 .vertical-timeline-element h3,
 .vertical-timeline-element h4,
@@ -93,7 +88,7 @@
     font-size: 0.9375rem;
   }
   .vertical-timeline-element .vertical-timeline-element-date {
-    font-size: 18px;
+    font-size: 2rem !important; /*** Timeline Date Text*/
   }
 }
 
@@ -103,12 +98,17 @@
   width: 4.5px !important; /* optional: adjust thickness */
 }
 
-/* Timeline card background */
+/*** Timeline card background*/
 .vertical-timeline-element-content {
   /* background-color: #f0f0f0;
   color: rgb(39, 40, 34);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+
+  background-color: #f0f0f0 !important; /* optional, for card background */
+  color: rgb(39, 40, 34) !important; /* optional, for text color */
+  border-radius: 10px !important; /* optional, rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important; /* shadow */
 }
 /* Arrow color to match card */
 .vertical-timeline-element-content::before {
@@ -120,25 +120,40 @@
   color: var(--color-text-light);
 }
 
-/* End - Career Styles */
+/*********************************************************
+/* End - Career  && Vertical Timeline UI Styles */
+/*********************************************************/
 
+/*********************************************************
 /* Intro Styles */
-@media screen and (max-width: 1280px) {
+/*********************************************************/
+
+@media screen and (min-width: 1080px) {
   .s-intro__content-title {
-    font-size: 5rem !important;
+    font-size: 6rem !important;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 599px) {
+  .s-intro__content-title {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .s-intro__content-title {
     font-size: 3rem !important;
     margin-bottom: -10px !important;
   }
 }
 
+/*********************************************************
 /* End Intro Styles */
+/*********************************************************/
 
+/*********************************************************
 /* Section Component Styles */
+/*********************************************************/
 #career {
   padding-top: 100px;
 }
@@ -150,5 +165,11 @@
 #testimonials {
   margin-top: 170px;
 }
-
+/*********************************************************
 /* End Section Component Styles */
+/*********************************************************/
+
+/*** Footer back to top text*/
+.ss-go-top span {
+  font-weight: 500 !important;
+}
