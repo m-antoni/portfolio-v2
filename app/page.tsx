@@ -14,7 +14,7 @@ export default function HomePage() {
       <Intro />
       <About />
       <Works />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <Numbers />
       <Footer />
     </>
