@@ -18,10 +18,10 @@ export default function Footer() {
       <div className="row s-footer__content">
         <div className="column xl-6 md-12 s-footer__block s-footer__about">
           <p className="attention-getter">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             illum quasi facere libero, fugiat laboriosam possimus amet
             consectetur adipisicing elit reprehenderit eveniet tempore quisquam
-            ipsa id esse. Facere ratione dignissimos.
+            ipsa id esse. Facere ratione dignissimos. */}
           </p>
         </div>
 

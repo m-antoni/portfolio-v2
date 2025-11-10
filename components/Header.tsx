@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     // <!-- s-header -->
-    <header className="s-header ">
+    <header className="s-header">
       <div className="row s-header__inner">
         <div className="s-header__block">
           <div className="s-header__logo">

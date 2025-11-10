@@ -17,7 +17,7 @@ export default function HomePage() {
       <Career />
       <Works />
       <Testimonial />
-      <Numbers />
+      {/* <Numbers /> */}
       <Footer />
     </>
   );

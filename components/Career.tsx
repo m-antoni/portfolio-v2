@@ -29,12 +29,12 @@ export default function Career() {
                 className="vertical-timeline-element--work"
                 contentStyle={{
                   background: "white",
-                  color: "rgb(39, 40, 34)",
+                  // color: "rgb(39, 40, 34)",
                 }}
                 contentArrowStyle={{
-                  borderRight: "7px solid  white",
+                  borderRight: "7px solid white",
                 }}
-                date="2021 - present"
+                date="2021 - Present"
                 iconStyle={{
                   background: "#E57F60",
                   color: "rgb(39, 40, 34)",
@@ -47,13 +47,18 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   Accenture
                 </h4>
-                {/* <p>
-                  Full-stack Web Development, GenAI/LLM, Project Management,
-                  Business Development
-                </p> */}
+                <p>
+                  Designed, developed, and deployed scalable, secure, and
+                  high-performance web applications. Collaborated across teams
+                  to translate business needs into technical solutions and
+                  optimize overall system performance.
+                </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
+                contentArrowStyle={{
+                  borderRight: "7px solid white",
+                }}
                 date="2022 - 2022"
                 iconStyle={{
                   background: "#E57F60",
@@ -67,14 +72,17 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   Stealth Startup (Project based)
                 </h4>
-                {/* <p>
-                  Frontend Development, Backend Development, User Experience,
-                  Team Leading
-                </p> */}
+                <p>
+                  Recruitment system development, API integration, and
+                  cross-team collaboration. using MER Stack & TypeScript
+                </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 date="2019 - 2021"
+                contentArrowStyle={{
+                  borderRight: "7px solid white",
+                }}
                 iconStyle={{
                   background: "#E57F60",
                   color: "rgb(39, 40, 34)",
@@ -85,11 +93,19 @@ export default function Career() {
                   Full Stack Web Developer
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">Bluehive</h4>
-                {/* <p>Full-stack Development, API Development, User Experience</p> */}
+                <p>
+                  Developed and maintained large-scale projects aligned with
+                  client goals. Documented systems and processes, conducted code
+                  reviews, mentored junior developers, and contributed to key
+                  technology decisions.
+                </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 date="2014 - 2016"
+                contentArrowStyle={{
+                  borderRight: "7px solid white",
+                }}
                 iconStyle={{
                   background: "#E57F60",
                   color: "rgb(39, 40, 34)",
@@ -102,7 +118,11 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   DC Multinational Group of Companies
                 </h4>
-                {/* <p>Automation, Data Governance, Statistical Analysis</p> */}
+                <p>
+                  Enhanced projects by implementing security, Wrote clean,
+                  maintainable code and modernized legacy systems into scalable
+                  web applications.
+                </p>
               </VerticalTimelineElement>
             </VerticalTimeline>
           </div>

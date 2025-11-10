@@ -27,70 +27,104 @@ export default function About() {
 
           <div className="grid-list-items s-about__blocks">
             <div className="grid-list-items__item s-about__block">
-              <h4 className="s-about__block-title">Experience</h4>
+              <h4 className="s-about__block-title">Seminars Events</h4>
               <ul className="s-about__list">
                 <li>
-                  Spotify <span>Product Designer</span>
+                  Google Developer Group DevFest Manila 2025{" "}
+                  <span>2025 - Accenture Hub, Taguig, Philippines</span>
                 </li>
                 <li>
-                  Dropbox <span>Interface Developer</span>
+                  Programmers & Developers Meet Up 8{" "}
+                  <span>2019 - Microsoft Philippines Inc.</span>
                 </li>
                 <li>
-                  Google <span>Lead UI Designer</span>
+                  All Out Connect (Learning Beyond The Fundamentals of IT)
+                  <span>
+                    2018 - Polytechnic University of the Philippines Taguig
+                  </span>
                 </li>
                 <li>
-                  Figma <span>UI Designer</span>
+                  Web Dev Summit 2017 (Ignite The Future of Technology){" "}
+                  <span>2017 - Far Eastern University</span>
                 </li>
                 <li>
-                  Microsoft <span>UI Designer</span>
+                  The 18th Graphic Expo 2013 (Innovation Beyond Limits){" "}
+                  <span>2013 - SMX Convention Center, Manila</span>
                 </li>
               </ul>
             </div>
             {/* end s-about__block */}
 
             <div className="grid-list-items__item s-about__block">
-              <h4 className="s-about__block-title">Awards</h4>
+              <h4 className="s-about__block-title">Cetifications & Awards</h4>
               <ul className="s-about__list">
                 <li>
                   <a href="#0">
-                    Site Of The Month <span>Awwwards — 2023</span>
+                    M220JS - MongoDB for JavaScript Developers
+                    <span>2021 - Oct</span>
                   </a>
                 </li>
                 <li>
                   <a href="#0">
-                    Site Of The Day <span>Awwwards — 2023</span>
+                    Best Programmer
+                    <span>2019 - Acer Academy Awardee at St Clare College</span>
                   </a>
                 </li>
                 <li>
                   <a href="#0">
-                    Agency of The Year <span>Awwwards — 2022</span>
+                    Computer Programmer Assistant{" "}
+                    <span>
+                      2019 - International Certificate Level Royal Institution
+                      Singapore at St Clare College
+                    </span>
                   </a>
                 </li>
                 <li>
                   <a href="#0">
-                    FWA of The Month <span>FWA — 2022</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#0">
-                    Site Of The Month <span>Awwwards — 2022</span>
+                    Best Web Design Award
+                    <span>2017 - St. Clare College of Caloocan</span>
                   </a>
                 </li>
               </ul>
             </div>
             {/* end s-about__block */}
 
-            <div className="grid-list-items__item s-about__block">
+            {/* <div className="grid-list-items__item s-about__block">
               <h4 className="s-about__block-title">Skills</h4>
               <ul className="s-about__list">
-                <li>Product Design</li>
-                <li>UI/UX Design</li>
-                <li>Prototyping</li>
-                <li>Frontend Development</li>
-                <li>Illustration</li>
-                <li>Visual Design</li>
+                <li>
+                  Programming
+                  <span>Node (Express)</span>
+                  <span>Laravel</span>
+                  <span>JavaScript</span>
+                  <span>TypeScript</span>
+                  <span>Reactjs/ Nextjs</span>
+                  <span>Redux </span>
+                  <span>Angular</span>
+                  <span>MongoDB</span>
+                  <span>Firebase (BaaS)</span>
+                  <span>Supabase (BaaS)</span>
+                  <span>MySQL</span>
+                  <span>CSS</span>
+                  <span>GIT</span>
+                </li>
+                <li>
+                  Methodologies & Practices
+                  <span>Agile (Scrum / Kanban)</span>
+                  <span>Code Review</span>
+                  <span>Clean Coding</span>
+                  <span>Creating Docs in Confluence </span>
+                </li>
+                <li>
+                  Graphics
+                  <span>Canva</span>
+                  <span>Adobe Photoshop</span>
+                  <span>Draw.io</span>
+                  <span>Coggle</span>
+                </li>
               </ul>
-            </div>
+            </div> */}
+
             {/* end s-about__block */}
           </div>
           {/* end grid-list-items */}

@@ -46,14 +46,17 @@
 
 /* Timeline Subtitle */
 .vertical-timeline-element .vertical-timeline-element-subtitle {
-  font-size: 1.5rem; /* base size for small screens */
+  font-family: var(--font-1);
+  font-size: 2rem !important; /* base size for small screens */
   color: var(--color-text-light);
   margin-top: 5px;
 }
 
 /* Timeline Paragraph */
 .vertical-timeline-element p {
-  font-size: 0.875rem; /* slightly smaller on mobile */
+  font-size: 1.5rem !important; /* slightly smaller on mobile */
+  margin-top: 5px !important;
+  color: var(--color-text-light);
 }
 
 /* Timeline Date */
@@ -107,7 +110,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
-
 /* Arrow color to match card */
 .vertical-timeline-element-content::before {
   /* border-right: 7px solid #f0f0f0; */
@@ -127,15 +129,9 @@
   }
 }
 
-@media screen and (max-width: 720px) {
-  .s-intro__content-title {
-    font-size: 4rem !important;
-  }
-}
-
 @media screen and (max-width: 400px) {
   .s-intro__content-title {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     margin-bottom: -10px !important;
   }
 }
@@ -143,7 +139,6 @@
 /* End Intro Styles */
 
 /* Section Component Styles */
-
 #career {
   padding-top: 100px;
 }
