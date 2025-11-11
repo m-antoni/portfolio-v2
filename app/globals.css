@@ -88,7 +88,7 @@
     font-size: 0.9375rem;
   }
   .vertical-timeline-element .vertical-timeline-element-date {
-    font-size: 2rem !important; /*** Timeline Date Text*/
+    font-size: 1.8rem !important; /*** Timeline Date Text*/
   }
 }
 
