@@ -1,12 +1,11 @@
-export default function Works() {
+export default function Projects() {
   return (
     <>
-      {/* # works ================================================== */}
-      <section id="works" className="s-works target-section">
+      <section id="projects" className="s-works target-section">
         <div className="row">
           <div className="column xl-12">
             <div className="section-header" data-num="03">
-              <h2 className="text-display-title">Selected Works.</h2>
+              <h2 className="text-display-title">Personal Projects.</h2>
             </div>
             {/* end section-header */}
           </div>

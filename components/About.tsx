@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <section id="about" className="s-about target-section">
@@ -56,13 +58,17 @@ export default function About() {
             {/* end s-about__block */}
 
             <div className="grid-list-items__item s-about__block">
-              <h4 className="s-about__block-title">Cetifications & Awards</h4>
+              <h4 className="s-about__block-title">Certifications & Awards</h4>
               <ul className="s-about__list">
                 <li>
-                  <a href="#0">
+                  <Link
+                    href="https://university.mongodb.com/course_completion/bb6c31a1-00f5-4eb6-81b0-81c2948ad7ff"
+                    target="_blank"
+                    className="text-link"
+                  >
                     M220JS - MongoDB for JavaScript Developers
                     <span>2021 - Oct</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#0">

@@ -88,7 +88,7 @@
     font-size: 0.9375rem;
   }
   .vertical-timeline-element .vertical-timeline-element-date {
-    font-size: 1.8rem !important; /*** Timeline Date Text*/
+    font-size: 1.6rem !important; /*** Timeline Date Text*/
   }
 }
 
@@ -170,4 +170,10 @@
 /*** Footer back to top text*/
 .ss-go-top span {
   font-weight: 500 !important;
+}
+
+/** Other Styles */
+.text-link {
+  /* color: black; or any color for text */
+  text-decoration: underline !important;
 }
