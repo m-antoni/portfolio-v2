@@ -49,9 +49,11 @@ export default function Career() {
                 </h4>
                 <p>
                   Designed, developed, and deployed scalable, secure, and
-                  high-performance web applications. Collaborated across teams
-                  to translate business needs into technical solutions and
-                  optimize overall system performance.
+                  high-performance web applications. Partnered with
+                  cross-functional teams to translate complex business
+                  requirements into effective technical solutions, while
+                  continuously optimizing system architecture, performance, and
+                  reliability.
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
@@ -73,9 +75,10 @@ export default function Career() {
                   Stealth Startup
                 </h4>
                 <p>
-                  A "Project-Based" gig involving the development of a
-                  recruitment system, API integration, and cross-team
-                  collaboration, using the MERN stack and TypeScript
+                  "Project-Based" engagement focused on building a recruitment
+                  system, integrating external APIs, and collaborating with
+                  cross-functional teams. Utilized the MERN stack and TypeScript
+                  to deliver a reliable and maintainable solution.
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
@@ -95,10 +98,11 @@ export default function Career() {
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">Bluehive</h4>
                 <p>
-                  Developed and maintained large-scale projects aligned with
-                  client goals. Documented systems and processes, conducted code
-                  reviews, mentored junior developers, and contributed to key
-                  technology decisions.
+                  Developed and maintained small to large-scale projects aligned
+                  with client objectives. Created documentation for systems and
+                  workflows, conducted thorough code reviews, mentored junior
+                  developers, and contributed to critical technology and
+                  architectural decisions
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
@@ -120,9 +124,9 @@ export default function Career() {
                   DC Multinational Group of Companies
                 </h4>
                 <p>
-                  Enhanced projects by implementing security, Wrote clean,
-                  maintainable code and modernized legacy systems into scalable
-                  web applications.
+                  Enhanced existing projects through security enhancements,
+                  clean and maintainable code practices, and the modernization
+                  of legacy systems into scalable, reliable web applications.
                 </p>
               </VerticalTimelineElement>
             </VerticalTimeline>

@@ -11,30 +11,27 @@ export default function About() {
           {/* end section-header */}
 
           <p className="attention-getter">
-            Experienced Software Engineer with a strong track record in
-            designing and building secure, efficient, and maintainable
-            applications using industry best practices. Passionate about
-            continuous learning and developing innovative projects that make a
-            positive impact. In addition to software expertise, I bring hands-on
-            experience in computer hardware, system installation, maintenance,
-            and troubleshooting.
+            Experienced Software Engineer with a strong foundation in designing
+            and developing secure, scalable, and maintainable software
+            solutions. I apply industry best practices, modern architectural
+            patterns, and rigorous development standards to deliver high-quality
+            applications.
           </p>
 
           <p className="attention-getter">
-            I love creating projects that solve real-world problems, push the
-            boundaries of technology, and deliver meaningful experiences for
-            users. Building innovative solutions and seeing them come to life is
-            what drives me every day.
+            In addition to software engineering, I bring practical expertise in
+            computer hardware, system installation, maintenance, and
+            troubleshooting, enabling me to approach technology with a
+            comprehensive end-to-end perspective. I am driven by creating
+            meaningful solutions, improving user experiences, and continuously
+            advancing my technical skillset. My work is guided by a commitment
+            to innovation, reliability, and long-term impact.
           </p>
 
           <div className="grid-list-items s-about__blocks">
             <div className="grid-list-items__item s-about__block">
               <h4 className="s-about__block-title">Seminars Events</h4>
               <ul className="s-about__list">
-                <li>
-                  Google Developer Group DevFest Manila 2025{" "}
-                  <span>2025 - Accenture Hub, Taguig, Philippines</span>
-                </li>
                 <li>
                   Programmers & Developers Meet Up 8{" "}
                   <span>2019 - Microsoft Philippines Inc.</span>

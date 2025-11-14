@@ -88,12 +88,12 @@ export default function Footer() {
         </div>
 
         <div className="column xl-6 tab-12">
-          <a
+          <Link
             href="/michael_antoni_cv.pdf"
             className="btn btn--stroke btn--large u-fullwidth"
           >
             Get My CV
-          </a>
+          </Link>
         </div>
       </div>
 
