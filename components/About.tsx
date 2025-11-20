@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TechStacks from "./TechStacks";
 
 export default function About() {
   return (
@@ -27,6 +28,13 @@ export default function About() {
             advancing my technical skillset. My work is guided by a commitment
             to innovation, reliability, and long-term impact.
           </p>
+
+          <div className="grid-list-items s-about__blocks">
+            <div className="grid-list-items__item s-about__block">
+              <h4 className="s-about__block-title">Tech Stacks</h4>
+              <TechStacks />
+            </div>
+          </div>
 
           <div className="grid-list-items s-about__blocks">
             <div className="grid-list-items__item s-about__block">
@@ -91,45 +99,8 @@ export default function About() {
               </ul>
             </div>
             {/* end s-about__block */}
-
-            {/* <div className="grid-list-items__item s-about__block">
-              <h4 className="s-about__block-title">Skills</h4>
-              <ul className="s-about__list">
-                <li>
-                  Programming
-                  <span>Node (Express)</span>
-                  <span>Laravel</span>
-                  <span>JavaScript</span>
-                  <span>TypeScript</span>
-                  <span>Reactjs/ Nextjs</span>
-                  <span>Redux </span>
-                  <span>Angular</span>
-                  <span>MongoDB</span>
-                  <span>Firebase (BaaS)</span>
-                  <span>Supabase (BaaS)</span>
-                  <span>MySQL</span>
-                  <span>CSS</span>
-                  <span>GIT</span>
-                </li>
-                <li>
-                  Methodologies & Practices
-                  <span>Agile (Scrum / Kanban)</span>
-                  <span>Code Review</span>
-                  <span>Clean Coding</span>
-                  <span>Creating Docs in Confluence </span>
-                </li>
-                <li>
-                  Graphics
-                  <span>Canva</span>
-                  <span>Adobe Photoshop</span>
-                  <span>Draw.io</span>
-                  <span>Coggle</span>
-                </li>
-              </ul>
-            </div> */}
-
-            {/* end s-about__block */}
           </div>
+
           {/* end grid-list-items */}
         </div>
         {/* end column */}
