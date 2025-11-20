@@ -6,7 +6,7 @@ import { FaArrowUp, FaArrowUp19 } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="s-footer target-section">
+    <footer className="s-footer target-section">
       <div className="row">
         <div className="column lg-12">
           <div className="section-header light-on-dark" data-num="05">
@@ -164,7 +164,7 @@ export default function Footer() {
         </div>
       </div> */}
 
-      <div className="ss-go-top">
+      <div id="footer" className="ss-go-top">
         <a className="smoothscroll" title="Back to Top" href="#top">
           <svg
             xmlns="http://www.w3.org/2000/svg"

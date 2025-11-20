@@ -10,7 +10,7 @@ export default function About() {
           </div>
           {/* end section-header */}
 
-          <p className="attention-getter">
+          <p className="attention-getter text-justify">
             Experienced Software Engineer with a strong foundation in designing
             and developing secure, scalable, and maintainable software
             solutions. I apply industry best practices, modern architectural
@@ -18,7 +18,7 @@ export default function About() {
             applications.
           </p>
 
-          <p className="attention-getter">
+          <p className="attention-getter text-justify">
             In addition to software engineering, I bring practical expertise in
             computer hardware, system installation, maintenance, and
             troubleshooting, enabling me to approach technology with a

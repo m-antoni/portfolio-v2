@@ -47,7 +47,7 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   Accenture
                 </h4>
-                <p>
+                <p className="text-justify">
                   Designed, developed, and deployed scalable, secure, and
                   high-performance web applications. Partnered with
                   cross-functional teams to translate complex business
@@ -74,7 +74,7 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   Stealth Startup
                 </h4>
-                <p>
+                <p className="text-justify">
                   "Project-Based" engagement focused on building a recruitment
                   system, integrating external APIs, and collaborating with
                   cross-functional teams. Utilized the MERN stack and TypeScript
@@ -97,7 +97,7 @@ export default function Career() {
                   Full Stack Web Developer
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">Bluehive</h4>
-                <p>
+                <p className="text-justify">
                   Developed and maintained small to large-scale projects aligned
                   with client objectives. Created documentation for systems and
                   workflows, conducted thorough code reviews, mentored junior
@@ -123,7 +123,7 @@ export default function Career() {
                 <h4 className="vertical-timeline-element-subtitle">
                   DC Multinational Group of Companies
                 </h4>
-                <p>
+                <p className="text-justify">
                   Enhanced existing projects through security enhancements,
                   clean and maintainable code practices, and the modernization
                   of legacy systems into scalable, reliable web applications.

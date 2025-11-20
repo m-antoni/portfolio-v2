@@ -1,3 +1,5 @@
+import ProjectGallery from "./ProjectPhotoGallery";
+
 export default function Projects() {
   return (
     <>
@@ -15,8 +17,9 @@ export default function Projects() {
           {/* Entry 1 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-datacenter.jpg"
+              href="/images/folio/datacenter/datacenter.jpg"
               className="entry__link glightbox"
+              data-gallery="datacenter"
               data-glightbox="title: Data Center v2 - (MERN Stack + TypeScript); description: .entry__desc-01"
             >
               <div className="entry__thumb">
@@ -31,6 +34,7 @@ export default function Projects() {
                 <div className="entry__cat">MERN Stack - TypeSCript</div>
               </div>
             </a>
+
             <div className="glightbox-desc entry__desc-01">
               <p>
                 A full-stack data visualization dashboard built with React
@@ -52,14 +56,15 @@ export default function Projects() {
           {/* Entry 2 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-eshop.jpg"
+              href="/images/folio/eshop/eshop.jpg"
+              data-gallery="eshop"
               className="entry__link glightbox"
               data-glightbox="title: eshop - (MERN Stack + Redux, Paypal sandbox); description: .entry__desc-02"
             >
               <div className="entry__thumb">
                 <img
                   src="/images/folio/eshop.jpg"
-                  srcSet="/images/folio/eshop.jpg 1x, /images/folio/eshop@2x.jpg 2x"
+                  srcSet="/images/folio/eshop.jpg 1x, /images/folio/eshop@2x.jpg"
                   alt=""
                 />
               </div>
@@ -76,25 +81,26 @@ export default function Projects() {
                 (MongoDB, Express, React + Redux, Node.js). This project
                 includes a secure backend API and frontend interface where users
                 can browse products, add items to their cart, and complete
-                purchases using PayPal or COD..{" "}
+                purchases using PayPal or COD.{" "}
                 <a
                   href="https://github.com/m-antoni/e-commerce-mern-api"
                   target="_blank"
                 >
                   Project Link
                 </a>
-                .
               </p>
             </div>
           </div>
+          <ProjectGallery category="eshop" />
           {/* end entry */}
 
           {/* Entry 3 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-quiz.jpg"
+              href="/images/folio/quiz/quiz.jpg"
               className="entry__link glightbox"
-              data-glightbox="title: Quizp App - (React, React Hooks Firebase, Firebase Auth); description: .entry__desc-03"
+              data-gallery="quiz"
+              data-glightbox="title: Quizp App - (React, React Hooks Firebase, Firebase Auth).; description: .entry__desc-03"
             >
               <div className="entry__thumb">
                 <img
@@ -119,17 +125,18 @@ export default function Projects() {
                 <a href="https://github.com/m-antoni/quiz-app" target="_blank">
                   Project Link
                 </a>
-                .
               </p>
             </div>
           </div>
+          <ProjectGallery category="quiz" />
           {/* end entry */}
 
           {/* Entry 4 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-weather.jpg"
+              href="/images/folio/weather/weather.jpg"
               className="entry__link glightbox"
+              data-gallery="weather"
               data-glightbox="title: Weather App - React Hooks, Context API with openweathermap API; description: .entry__desc-04"
             >
               <div className="entry__thumb">
@@ -160,17 +167,18 @@ export default function Projects() {
                 >
                   Project Link
                 </a>
-                .
               </p>
             </div>
           </div>
+          <ProjectGallery category="weather" />
           {/* end entry */}
 
           {/* Entry 5 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-login.jpg"
+              href="/images/folio/login/login.jpg"
               className="entry__link glightbox"
+              data-gallery="login"
               data-glightbox="title: Attendance Monitoring System using QRCode - (Laravel and MySQL); description: .entry__desc-05"
             >
               <div className="entry__thumb">
@@ -196,23 +204,24 @@ export default function Projects() {
                 <a href="https://github.com/m-antoni/login" target="_blank">
                   Project Link
                 </a>
-                .
               </p>
             </div>
           </div>
+          <ProjectGallery category="login" />
           {/* end entry */}
 
           {/* Entry 6 */}
           <div className="column entry">
             <a
-              href="/images/folio/gallery/g-is.jpg"
+              href="/images/folio/learn/learn.jpg"
+              data-gallery="learn"
               className="entry__link glightbox"
               data-glightbox="title: Advanced and Interactive Learning System - Microsoft Fox Pro 9.0; description: .entry__desc-06"
             >
               <div className="entry__thumb">
                 <img
-                  src="/images/folio/is.jpg"
-                  srcSet="/images/folio/is.jpg 1x, /images/folio/is@2x.jpg 2x"
+                  src="/images/folio/learn.jpg"
+                  srcSet="/images/folio/learn.jpg 1x, /images/folio/learn@2x.jpg 2x"
                   alt=""
                 />
               </div>
@@ -235,10 +244,10 @@ export default function Projects() {
                 >
                   Project Link
                 </a>
-                .
               </p>
             </div>
           </div>
+          <ProjectGallery category="learn" />
           {/* end entry */}
         </div>
         {/* folio entries */}
