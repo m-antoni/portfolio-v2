@@ -1,7 +1,10 @@
-// ProjectGallery.tsx
-import React from "react";
-
-type ProjectCategory = "eshop" | "quiz" | "weather" | "login" | "learn";
+type ProjectCategory =
+  | "bible"
+  | "eshop"
+  | "quiz"
+  | "weather"
+  | "login"
+  | "learn";
 
 interface Project {
   title: string;
@@ -11,6 +14,13 @@ interface Project {
 }
 
 const projectList: Record<ProjectCategory, Project> = {
+  bible: {
+    title: "BibleVerse - NextJS, TypeScript, TailwindCSS, Supabase (BaaS)",
+    description:
+      "A Bible browsing and note-taking web application built with Next.js , TailwindCSS and Supabase. Users can explore books and chapters, search across all verses, and save personalized notes for each chapter of the book.",
+    github: "https://github.com/m-antoni/bible-verse",
+    total: 5,
+  },
   eshop: {
     title: "eshop - (MERN Stack + Redux, Paypal sandbox)",
     description:
@@ -60,10 +70,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ category }) => {
   return (
     <>
       {Array.from({ length: project.total }, (_, i) => {
-        const title = `${project.title} ${i + 1}`;
-        const description = `${project.description} ${i + 1}. <a href='${
-          project.github
-        }' target='_blank' rel="noopener noreferrer">Project Link</a>`;
+        const title = `${project.title} `;
+        const description = `${project.description}. <a href='${project.github}' target='_blank' rel="noopener noreferrer"> Project Link</a>`;
 
         return (
           <a

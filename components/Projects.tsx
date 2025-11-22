@@ -17,33 +17,34 @@ export default function Projects() {
           {/* Entry 1 */}
           <div className="column entry">
             <a
-              href="/images/folio/datacenter/datacenter.jpg"
+              href="/images/folio/bible/bible.jpg"
               className="entry__link glightbox"
-              data-gallery="datacenter"
-              data-glightbox="title: Data Center v2 - (MERN Stack + TypeScript); description: .entry__desc-01"
+              data-gallery="bible"
+              data-glightbox="title: BibleVerse - NextJS, TypeScript, TailwindCSS, Supabase (BaaS); description: .entry__desc-01"
             >
               <div className="entry__thumb">
                 <img
-                  src="/images/folio/datacenter.jpg"
-                  srcSet="/images/folio/datacenter.jpg 1x, /images/folio/datacenter@2x.jpg 2x"
+                  src="/images/folio/bible.jpg"
+                  srcSet="/images/folio/bible.jpg 1x, /images/folio/bible@2x.jpg 2x"
                   alt=""
                 />
               </div>
               <div className="entry__info">
-                <h4 className="entry__title">Data Center v2</h4>
-                <div className="entry__cat">MERN Stack - TypeSCript</div>
+                <h4 className="entry__title">BibleVerse 1.0</h4>
+                <div className="entry__cat">
+                  NextJS, TypeScript, TailwindCSS, Supabase (BaaS)
+                </div>
               </div>
             </a>
 
             <div className="glightbox-desc entry__desc-01">
               <p>
-                A full-stack data visualization dashboard built with React
-                (TypeScript) and Node.js (Express + TypeScript). The client app
-                fetches data from a custom Node API, which in turn retrieves
-                data from a third-party API, processes it, and stores the
-                results in MongoDB..{" "}
+                A Bible browsing and note-taking web application built with
+                Next.js , TailwindCSS and Supabase. Users can explore books and
+                chapters, search across all verses, and save personalized notes
+                for each chapter of the book.
                 <a
-                  href="https://github.com/m-antoni/datacenter-api-vr2"
+                  href="https://github.com/m-antoni/bible-verse"
                   target="_blank"
                 >
                   Project Link
@@ -51,6 +52,7 @@ export default function Projects() {
               </p>
             </div>
           </div>
+          <ProjectGallery category="bible" />
           {/* end entry */}
 
           {/* Entry 2 */}

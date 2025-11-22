@@ -31,7 +31,7 @@ export default function About() {
 
           <div className="grid-list-items s-about__blocks">
             <div className="grid-list-items__item s-about__block">
-              <h4 className="s-about__block-title">Technologies Used</h4>
+              <h4 className="s-about__block-title">Technologies Used</h4>
               <TechStacks />
             </div>
           </div>

@@ -3,8 +3,6 @@ import "./globals.css";
 import Script from "next/script";
 import { ReactNode } from "react";
 import Preloader from "@/components/Preloader";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Michael Antoni",
@@ -42,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* CSS */}
         <link rel="stylesheet" href="/css/vendor.css" />
         <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body id="top" className="no-js">
         {/* Preloader */}
@@ -58,8 +57,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <Script src="/js/plugins.js" strategy="afterInteractive" />
         <Script src="/js/main.js" strategy="afterInteractive" />
-        {/* <Script src="/js/particles.min.js" strategy="afterInteractive" /> */}
-        {/* <Script src="/js/particles-init.js" strategy="afterInteractive" /> */}
       </body>
     </html>
   );

@@ -3,8 +3,6 @@
 import Link from "next/link";
 
 export default function Intro() {
-  // const fileId = process.env.NEXT_PUBLIC_DRIVE_FILE_ID;
-
   return (
     <section id="intro" className="s-intro target-section">
       <div className="row s-intro__content width-sixteen-col">
