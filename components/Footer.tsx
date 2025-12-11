@@ -87,7 +87,7 @@ export default function Footer() {
 
         <div className="column xl-6 tab-12">
           <Link
-            href="/MICHAEL_ANTONI_CV.pdf"
+            href="/michaelantoni_cv.pdf"
             className="btn btn--stroke btn--large u-fullwidth"
           >
             Get My CV

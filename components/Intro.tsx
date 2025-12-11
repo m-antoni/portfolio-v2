@@ -22,7 +22,7 @@ export default function Intro() {
                 Get In Touch
               </Link> */}
               <a
-                href="/MICHAEL_ANTONI_CV.pdf"
+                href="/michaelantoni_cv.pdf"
                 download
                 className="btn btn--stroke"
                 style={{ cursor: "pointer" }} // make it clear it’s clickable
