@@ -22,6 +22,7 @@ import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/app/lib/dbConnect";
 import Contact from "@/app/lib/models/Contact";
+import { rateLimit } from "@/app/lib/ratelimit";
 
 export const runtime = "nodejs";
 
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
     const { email, subject, body } = await req.json();
 
     // -----------------------------
-    // 1. VALIDATION
+    // VALIDATION
     // -----------------------------
     if (!email || !subject || !body) {
       return NextResponse.json(
@@ -40,7 +41,19 @@ export async function POST(req: NextRequest) {
     }
 
     // -----------------------------
-    // 2. PREPARE EMAIL
+    // PREVENT SPAMMING
+    // -----------------------------
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
+
+    if (!rateLimit(ip)) {
+      return NextResponse.json(
+        { message: "Too many requests. try again later." },
+        { status: 429 }
+      );
+    }
+
+    // -----------------------------
+    // PREPARE EMAIL
     // -----------------------------
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -95,7 +108,7 @@ export async function POST(req: NextRequest) {
     });
 
     // -----------------------------
-    // 3. PREPARE MONGODB SAVE
+    //  PREPARE MONGODB SAVE
     // -----------------------------
     const dbPromise = (async () => {
       await dbConnect();
@@ -109,15 +122,16 @@ export async function POST(req: NextRequest) {
     })();
 
     // -----------------------------
-    // 4. RUN BOTH IN PARALLEL
+    // RUN BOTH IN PARALLEL
     // -----------------------------
     await Promise.all([emailPromise, dbPromise]);
 
     // -----------------------------
-    // 5. RETURN SUCCESS
+    // RETURN SUCCESS
     // -----------------------------
     return NextResponse.json({
       message: "Message sent successfully!",
+      status: 200,
     });
   } catch (error) {
     console.error("[CONTACT API ERROR]:", error);

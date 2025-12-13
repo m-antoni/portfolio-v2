@@ -66,6 +66,20 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
 
       const data = await res.json();
 
+      // Limit requests to 3 to prevent form spam
+      if (res.status === 429) {
+        handleClose();
+        toast.error(`${data.message}`, {
+          position: "top-center",
+          style: {
+            fontFamily: "'Inter', sans-serif",
+            fontSize: "1.5rem",
+            fontWeight: 500,
+          },
+        });
+      }
+
+      // Success request
       if (res.ok) {
         toast.success(`${data.message}`, {
           position: "top-center",

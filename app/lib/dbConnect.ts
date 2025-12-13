@@ -1,5 +1,3 @@
-// lib/dbConnect.ts
-
 import mongoose from "mongoose";
 
 // Define the type for the cached connection object
