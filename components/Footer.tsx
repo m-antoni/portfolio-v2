@@ -1,10 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import EmailModal from "./ui/EmailModal";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import { Bounce } from "react-toastify/unstyled";
 
 export default function Footer() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const test = () => {
+    // toast.success("🦄 Wow so easy!");
+  };
+
   return (
-    <footer id="footer" className="s-footer target-section">
+    <footer className="s-footer target-section">
       <div className="row">
         <div className="column lg-12">
           <div className="section-header light-on-dark" data-num="05">
@@ -78,7 +88,7 @@ export default function Footer() {
       <div className="row s-footer__buttons">
         <div className="column xl-6 tab-12">
           <a
-            href="mailto:#michaelantoni.tech@gmail.com"
+            onClick={() => setIsOpen(true)}
             className="btn btn--primary btn--large u-fullwidth"
           >
             Message Me
@@ -87,6 +97,7 @@ export default function Footer() {
 
         <div className="column xl-6 tab-12">
           <Link
+            onClick={() => test()}
             href="/michaelantoni_cv.pdf"
             className="btn btn--stroke btn--large u-fullwidth"
           >
@@ -162,7 +173,7 @@ export default function Footer() {
         </div>
       </div> */}
 
-      <div className="ss-go-top">
+      <div id="footer" className="ss-go-top">
         <a className="smoothscroll" title="Back to Top" href="#top">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -175,6 +186,21 @@ export default function Footer() {
         </a>
         <span>Back To Top</span>
       </div>
+
+      <EmailModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </footer>
   );
 }
