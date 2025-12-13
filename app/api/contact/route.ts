@@ -20,6 +20,8 @@
 
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/app/lib/dbConnect";
+import Contact from "@/app/lib/models/Contact";
 
 export const runtime = "nodejs";
 
@@ -38,7 +40,7 @@ export async function POST(req: NextRequest) {
     }
 
     // -----------------------------
-    // 2. SEND EMAIL (awaited)
+    // 2. PREPARE EMAIL
     // -----------------------------
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -50,12 +52,12 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    await transporter.sendMail({
+    const emailPromise = transporter.sendMail({
       from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_RECEIVER,
       replyTo: email,
       subject: `[Portfolio] New Message: ${subject}`,
-      text: `From: ${email}\nSubject: ${subject}\n\nMessage:\n${body}`,
+      text: `From: ${email}\nSubject: ${subject}\n\n${body}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 3px; overflow: hidden;">
           <div style="background-color: #E25936; color: white; padding: 15px; text-align: center;">
@@ -92,23 +94,33 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    console.log("[EMAIL] Sent successfully");
+    // -----------------------------
+    // 3. PREPARE MONGODB SAVE
+    // -----------------------------
+    const dbPromise = (async () => {
+      await dbConnect();
+      const doc = await Contact.create({ email, subject, body });
+
+      console.log("MONGODB_SAVE_SUCCESS", {
+        id: doc._id.toString(),
+        email,
+        time: new Date().toISOString(),
+      });
+    })();
 
     // -----------------------------
-    // 3. TRIGGER BACKGROUND DB SAVE
+    // 4. RUN BOTH IN PARALLEL
     // -----------------------------
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/save`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, subject, body }),
-    }).catch((err) => console.error("[BACKGROUND SAVE FETCH ERROR]:", err));
+    await Promise.all([emailPromise, dbPromise]);
 
     // -----------------------------
-    // 4. RETURN SUCCESS IMMEDIATELY
+    // 5. RETURN SUCCESS
     // -----------------------------
-    return NextResponse.json({ message: "Message sent successfully!" });
+    return NextResponse.json({
+      message: "Message sent successfully!",
+    });
   } catch (error) {
-    console.error("[GENERAL ERROR]:", error);
+    console.error("[CONTACT API ERROR]:", error);
     return NextResponse.json(
       { message: "Unexpected server error." },
       { status: 500 }
