@@ -1,0 +1,161 @@
+/* Backdrop */
+.nm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.25s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Modal */
+.nm-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Inter", sans-serif;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.25s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+/* Title */
+.nm-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 0;
+  margin-bottom: -5px;
+}
+
+/* Inputs */
+.nm-input,
+.nm-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1.5rem;
+  border: 1px solid #999;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  color: #111;
+}
+
+/* Placeholder */
+.nm-input::placeholder,
+.nm-textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Remove all focus effects */
+.nm-input:focus,
+.nm-textarea:focus {
+  border-color: #999; /* same as normal */
+  box-shadow: none;
+}
+
+/* Textarea */
+.nm-textarea {
+  height: 180px;
+  resize: vertical;
+}
+
+/* Actions */
+.nm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Close button */
+.nm-btn-light {
+  background-color: #111;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nm-btn-light:hover {
+  background-color: #333;
+}
+
+/* Submit button */
+.nm-btn-primary {
+  background-color: #f97316;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nm-btn-primary:hover {
+  background-color: #fb923c;
+}
+
+/* Highlight error fields in red */
+.nm-input.error,
+.nm-textarea.error {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
