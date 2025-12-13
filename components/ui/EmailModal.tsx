@@ -43,8 +43,9 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
 
   const handleSubmit = async () => {
     // Validate fields
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const newErrors = {
-      email: email.trim() === "",
+      email: email.trim() === "" || !emailRegex.test(email), // must not be empty & valid format
       subject: subject.trim() === "",
       body: body.trim() === "",
     };
@@ -64,8 +65,9 @@ export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
       });
 
       const data = await res.json();
+
       if (res.ok) {
-        toast.success("Message sent successfully!", {
+        toast.success(`${data.message}`, {
           position: "top-center",
           style: {
             fontFamily: "'Inter', sans-serif",
