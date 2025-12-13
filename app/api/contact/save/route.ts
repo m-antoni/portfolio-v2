@@ -15,9 +15,12 @@ export async function POST(req: NextRequest) {
     await dbConnect();
 
     const newContact = await Contact.create({ email, subject, body });
-    console.log(`============================================================`);
-    console.log(`💾 [MONGODB] Save successful. ID: ${newContact._id}]`);
-    console.log(`============================================================`);
+    console.log("MONGODB_SAVE_SUCCESS", {
+      id: newContact._id.toString(),
+      email,
+      subject,
+      time: new Date().toISOString(),
+    });
   } catch (error) {
     console.error("[DB BACKGROUND ERROR]:", error);
   }
