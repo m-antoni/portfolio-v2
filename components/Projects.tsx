@@ -1,4 +1,4 @@
-import ProjectGallery from "./ProjectPhotoGallery";
+import ProjectGallery from "./ui/ProjectPhotoGallery";
 
 export default function Projects() {
   return (

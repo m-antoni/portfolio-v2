@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TechStacks from "./TechStacks";
+import TechStacks from "./ui/TechStacks";
 
 export default function About() {
   return (

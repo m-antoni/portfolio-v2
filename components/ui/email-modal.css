@@ -34,7 +34,7 @@
   width: 100%;
   max-width: 500px;
   padding: 20px 30px;
-  border-radius: 6px;
+  border-radius: 3px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@
 /* Remove all focus effects */
 .nm-input:focus,
 .nm-textarea:focus {
-  border-color: #999; /* same as normal */
+  border-color: #999 !important; /* same as normal */
   box-shadow: none;
 }
 
@@ -119,10 +119,10 @@
 .nm-btn-light {
   background-color: #111;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   font-size: 1rem;
   transition: background 0.2s;
   display: flex;
@@ -130,27 +130,29 @@
   justify-content: center;
 }
 
-.nm-btn-light:hover {
+/* .nm-btn-light:hover {
   background-color: #333;
-}
+} */
 
 /* Submit button */
 .nm-btn-primary {
-  background-color: #f97316;
+  background-color: rgb(226, 89, 54);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   font-size: 1rem;
   transition: background 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: -3px !important;
 }
 
 .nm-btn-primary:hover {
-  background-color: #fb923c;
+  background-color: #111;
+  color: #fff;
 }
 
 /* Highlight error fields in red */

@@ -4,6 +4,7 @@ export default function TechStacks() {
   const tech = [
     { name: "Node", icon: "nodejs/nodejs-plain.svg" },
     { name: "Express", icon: "express/express-original.svg" },
+    { name: "Java", icon: "java/java-original-wordmark.svg" },
     { name: "Laravel", icon: "laravel/laravel-original.svg" },
     { name: "JavaScript", icon: "javascript/javascript-original.svg" },
     { name: "TypeScript", icon: "typescript/typescript-original.svg" },

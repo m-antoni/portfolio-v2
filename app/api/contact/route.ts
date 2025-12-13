@@ -23,12 +23,47 @@ export async function POST(req: NextRequest) {
     });
 
     const info = await transporter.sendMail({
-      from: `"Contact Form" <${process.env.SMTP_USER}>`, // must be your Gmail
+      from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_RECEIVER,
-      replyTo: email, // allows replying to the user
-      subject,
-      text: `From: ${email}\n\n${body}`,
-      html: `<p><strong>From:</strong> ${email}</p><p>${body}</p>`,
+      replyTo: email,
+      subject: `From Portfolio Website: ${subject}`, // Added subject here for clarity
+      text: `From: ${email}\nSubject: ${subject}\n\nMessage:\n${body}`,
+
+      html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 3px; overflow: hidden;">
+              
+              <div style="background-color: #E25936; color: white; padding: 15px; text-align: center;">
+                  <h2 style="margin: 0; font-size: 18px;">New Contact Form Submission</h2>
+              </div>
+  
+              <div style="padding: 20px;">
+                  <p style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
+                      <strong>Received At:</strong> ${new Date().toLocaleString(
+                        "en-US",
+                        { timeZone: "Asia/Manila" }
+                      )}
+                  </p>
+  
+                  <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                      <tr>
+                          <td style="padding: 8px 0; width: 100px;"><strong>Sender Email:</strong></td>
+                          <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #007BFF; text-decoration: none;">${email}</a></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px 0;"><strong>Subject:</strong></td>
+                          <td style="padding: 8px 0;">${subject}</td>
+                      </tr>
+                  </table>
+  
+                  <h4 style="margin-top: 0; border-bottom: 1px solid #dee2e6; padding-bottom: 8px; color: #343a40;">Message Body:</h4>
+                  <p style="white-space: pre-wrap; margin: 0; line-height: 1.6;">${body}</p>
+              </div>
+  
+              <div style="background-color: #f1f1f1; color: #6c757d; padding: 10px; text-align: center; font-size: 12px;">
+                  Automated notification via NodeMailer.
+              </div>
+          </div>
+      `,
     });
 
     console.log("Email info:", info);
