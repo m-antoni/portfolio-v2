@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
     // -----------------------------
     // 3. TRIGGER BACKGROUND DB SAVE
     // -----------------------------
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/save`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/save`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, subject, body }),
