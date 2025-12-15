@@ -31,7 +31,9 @@ export default function Works() {
                     />
                     <cite className="s-testimonials__cite">
                       <strong>Alejandro Mendoza</strong>
-                      <span>Network Infrastructure Engineer at Indra</span>
+                      <span>
+                        Network Operation Center Team Lead Engineer at TechPryme
+                      </span>
                     </cite>
                   </div>
                   <p className="text-justify">
