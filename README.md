@@ -1,98 +1,36 @@
-# Cron Labs
-
-Cron Labs is a Next.js web application that enables users to create and manage cron jobs to hit specific API endpoints on a set schedule. It provides a centralized interface to automate periodic requests, ensuring your services stay active and perform tasks at precise intervals.
-
-![App Screenshot](image01.png)
-
-<br/>
-
-## Tech Stack
-
-| Technology                               | Description                                            |
-| :--------------------------------------- | :----------------------------------------------------- |
-| Next.js                                  | React framework for web apps.                          |
-| TypeScript                               | Typed JavaScript for reliability.                      |
-| [Neon](https://neon.com)                 | Serverless Postgres database.                          |
-| [Prisma](https://www.prisma.io)          | Type-safe ORM for database management.                 |
-| [Auth.js](https://authjs.dev) (NextAuth) | Authentication with OAuth support.                     |
-| Bootstrap 4                              | Responsive CSS framework for styling and layout.       |
-| [cron-job.org](https://cron-job.org/en/) | External service to trigger and maintain app activity. |
-| Nodemailer                               | Node.js module for sending emails and notifications.   |
-
----
-
-## Features
-
-- **Custom Scheduling:** Create cron jobs to call API endpoints at custom intervals like every day or every 2, 15, or 30 minutes.
-- **Live Monitoring:** View all active cron jobs and their current status in one dashboard.
-- **Detailed Logging:** See the last run time and the next scheduled run for each job.  
-  _Note:_ Every day at 12 AM, the `execution_logs` table is cleaned up to keep only the logs from the last day.
-- **Next.js Uptime:** Uses cron-job.org to keep the Next.js serverless app active.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Prerequisites
+First, run the development server:
 
-- Node.js 18 or higher
-- A Neon Database account
-- OAuth credentials (Google, GitHub, or Facebook)
-- SMTP server details for email notifications
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Installation
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. **Clone the repository:**
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-   ```bash
-   git clone [https://github.com/m-antoni/cron-labs.git](https://github.com/m-antoni/cron-labs.git)
-   cd cron-labs
-   ```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-1. **Install dependencies:**
+## Learn More
 
-   ```bash
-   npm install
-   ```
+To learn more about Next.js, take a look at the following resources:
 
-1. **Environment Setup** Create a `.env` file in the root directory and add the following:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-   ```
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   NEXTAUTH_URL=
-   CRON_SECRET=
-   DATABASE_URL=
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-   AUTH_SECRET=
-   AUTH_GOOGLE_ID=
-   AUTH_GOOGLE_SECRET=
-   AUTH_GITHUB_ID=
-   AUTH_GITHUB_SECRET=
-   AUTH_FACEBOOK_ID=
-   AUTH_FACEBOOK_SECRET=
-   AUTH_TRUST_HOST=true
+## Deploy on Vercel
 
-   SMTP_HOST=
-   SMTP_PORT=
-   SMTP_SECURE=
-   SMTP_USER=
-   SMTP_PASS=
-   CONTACT_RECEIVER=
-   ```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. **Database Migration**
-
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-
-1. **Run the Development Server**
-
-   ```bash
-   npm run dev
-   ```
-
-## Author
-
-**Michael B. Antoni**  
-LinkedIn: [https://linkedin.com/in/m-antoni](https://linkedin.com/in/m-antoni)  
-Email: michaelantoni.tech@gmail.com
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
