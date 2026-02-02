@@ -1,4 +1,5 @@
 type ProjectCategory =
+  | "cronlabs"
   | "bible"
   | "eshop"
   | "quiz"
@@ -14,6 +15,13 @@ interface Project {
 }
 
 const projectList: Record<ProjectCategory, Project> = {
+  cronlabs: {
+    title: "CronLabs - NextJS, TypeScript, Bootstrap 4, Neon DB (PostgreSQL)",
+    description:
+      "NextJS web application that enables users to create and manage cron jobs to hit specific API endpoints on a set schedule.",
+    github: "https://github.com/m-antoni/cron-labs",
+    total: 4,
+  },
   bible: {
     title: "BibleVerse - NextJS, TypeScript, TailwindCSS, Supabase (BaaS)",
     description:

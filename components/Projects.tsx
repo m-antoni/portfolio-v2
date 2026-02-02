@@ -14,7 +14,43 @@ export default function Projects() {
         </div>
 
         <div className="row folio-entries">
-          {/* Entry 1 */}
+          {/* Entry 0 */}
+          <div className="column entry">
+            <a
+              href="/images/folio/cronlabs/cronlabs.jpg"
+              className="entry__link glightbox"
+              data-gallery="cronlabs"
+              data-glightbox="title: CronLabs - NextJS, TypeScript, Boostrap 4, Neon DB (PostgreSQL); description: .entry__desc-00"
+            >
+              <div className="entry__thumb">
+                <img
+                  src="/images/folio/cronlabs.jpg"
+                  srcSet="/images/folio/cronlabs.jpg 1x, /images/folio/cronlabs@2x.jpg 2x"
+                  alt=""
+                />
+              </div>
+              <div className="entry__info">
+                <h4 className="entry__title">CronLabs</h4>
+                <div className="entry__cat">
+                  NextJS, TypeScript, Boostrap 4, Neon DB (PostgreSQL)
+                </div>
+              </div>
+            </a>
+
+            <div className="glightbox-desc entry__desc-00">
+              <p>
+                NextJS web application that enables users to create and manage
+                cron jobs to hit specific API endpoints on a set schedule.
+                <a href="https://github.com/m-antoni/cron-labs" target="_blank">
+                  Project Link
+                </a>
+              </p>
+            </div>
+          </div>
+          <ProjectGallery category="cronlabs" />
+          {/* end entry */}
+
+          {/* Entry  */}
           <div className="column entry">
             <a
               href="/images/folio/bible/bible.jpg"
@@ -213,7 +249,7 @@ export default function Projects() {
           {/* end entry */}
 
           {/* Entry 6 */}
-          <div className="column entry">
+          {/* <div className="column entry">
             <a
               href="/images/folio/learn/learn.jpg"
               data-gallery="learn"
@@ -249,7 +285,7 @@ export default function Projects() {
               </p>
             </div>
           </div>
-          <ProjectGallery category="learn" />
+          <ProjectGallery category="learn" /> */}
           {/* end entry */}
         </div>
         {/* folio entries */}
