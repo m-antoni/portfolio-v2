@@ -20,7 +20,7 @@ export default function Projects() {
               href="/images/folio/cronlabs/cronlabs.jpg"
               className="entry__link glightbox"
               data-gallery="cronlabs"
-              data-glightbox="title: CronLabs - NextJS, TypeScript, Boostrap 4, Neon DB (PostgreSQL); description: .entry__desc-00"
+              data-glightbox="title: CronLabs - NextJS, TypeScript, Bootstrap 4, Neon DB (PostgreSQL); description: .entry__desc-00"
             >
               <div className="entry__thumb">
                 <img
