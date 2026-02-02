@@ -18,7 +18,7 @@ const projectList: Record<ProjectCategory, Project> = {
   cronlabs: {
     title: "CronLabs - NextJS, TypeScript, Bootstrap 4, Neon DB (PostgreSQL)",
     description:
-      "NextJS web application that enables users to create and manage cron jobs to hit specific API endpoints on a set schedule.",
+      "Cron Labs is a Next.js web application designed to automate and manage scheduled API requests. It provides a centralized dashboard to ensure your services remain active and execute tasks at precise, customizable intervals.",
     github: "https://github.com/m-antoni/cron-labs",
     total: 4,
   },

@@ -39,8 +39,10 @@ export default function Projects() {
 
             <div className="glightbox-desc entry__desc-00">
               <p>
-                NextJS web application that enables users to create and manage
-                cron jobs to hit specific API endpoints on a set schedule.
+                Cron Labs is a Next.js web application designed to automate and
+                manage scheduled API requests. It provides a centralized
+                dashboard to ensure your services remain active and execute
+                tasks at precise, customizable intervals.
                 <a href="https://github.com/m-antoni/cron-labs" target="_blank">
                   Project Link
                 </a>
