@@ -37,9 +37,17 @@ export async function POST(req: NextRequest) {
   const visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
 
   const API_KEY = process.env.IPSTACK_KEY;
-  const url = `https://api.ipstack.com/${visitorIp}?access_key=${API_KEY}&hostname=1`;
-  // const url = `https://api.ipstack.com/check?access_key=${API_KEY}&hostname=1`;
+  let url = `https://api.ipstack.com/${visitorIp}?access_key=${API_KEY}&hostname=1`;
 
+  // ------------------------------------------------
+  // DEVELOPMENT MODE: Get the local machine IP address
+  // ------------------------------------------------
+  if (
+    process.env.NODE_ENV === "development" &&
+    (visitorIp === "::1" || visitorIp === "127.0.0.1")
+  ) {
+    url = `https://api.ipstack.com/check?access_key=${API_KEY}&hostname=1`;
+  }
   try {
     // -----------------------------
     //  IPSTACK API
@@ -48,10 +56,12 @@ export async function POST(req: NextRequest) {
     const response = await fetch(url);
     const ipData = await response.json();
 
-    if (!response.ok) {
-      return NextResponse.json(
-        { error: "Failed to fetch from ipstack" },
-        { status: response.status }
+    // ------------------------------------------------
+    // FALLBACK: If API fails, ensure ipData has enough structure
+    // ------------------------------------------------
+    if (!response.ok || ipData.error) {
+      console.warn(
+        "IPStack failed or limit reached. Proceeding with fallback data."
       );
     }
 
@@ -68,7 +78,7 @@ export async function POST(req: NextRequest) {
 
     const updatedVisitor = await Visitor.findOneAndUpdate(
       {
-        ip: ipData.ip,
+        ip: ipData.ip || visitorIp,
         // This is key: it looks for an entry for THIS IP created TODAY
         dateString: today,
       },
@@ -85,7 +95,7 @@ export async function POST(req: NextRequest) {
           city: ipData.city,
           latitude: ipData.latitude,
           longitude: ipData.longitude,
-          country_flag: ipData.location?.country_flag,
+          country_flag: ipData.location?.country_flag || null,
           updatedAt: new Date(),
         },
         $setOnInsert: {
