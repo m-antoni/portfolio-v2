@@ -32,8 +32,13 @@ import dbConnect from "@/app/lib/dbConnect";
 import Visitor from "@/app/lib/models/Visitor";
 
 export async function POST(req: NextRequest) {
+  // Get the visitor's real IP from Vercel's headers
+  const forwarded = req.headers.get("x-forwarded-for");
+  const visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
+
   const API_KEY = process.env.IPSTACK_KEY;
-  const url = `https://api.ipstack.com/check?access_key=${API_KEY}&hostname=1`;
+  const url = `https://api.ipstack.com/${visitorIp}?access_key=${API_KEY}&hostname=1`;
+  // const url = `https://api.ipstack.com/check?access_key=${API_KEY}&hostname=1`;
 
   try {
     // -----------------------------
