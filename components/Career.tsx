@@ -18,7 +18,6 @@ export default function Career() {
             <div className="section-header" data-num="02">
               <h2 className="text-display-title">Career.</h2>
             </div>
-            {/* end section-header */}
           </div>
         </div>
 

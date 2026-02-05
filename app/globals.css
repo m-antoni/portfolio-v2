@@ -153,7 +153,8 @@
 /* Section Component Styles */
 /*********************************************************/
 #career {
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  margin-top: 40px;
 }
 
 #projects {

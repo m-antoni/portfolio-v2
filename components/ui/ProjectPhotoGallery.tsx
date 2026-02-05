@@ -27,7 +27,7 @@ const projectList: Record<ProjectCategory, Project> = {
     description:
       "A Bible browsing and note-taking web application built with Next.js , TailwindCSS and Supabase. Users can explore books and chapters, search across all verses, and save personalized notes for each chapter of the book.",
     github: "https://github.com/m-antoni/bible-verse",
-    total: 5,
+    total: 4,
   },
   eshop: {
     title: "eshop - (MERN Stack + Redux, Paypal sandbox)",
