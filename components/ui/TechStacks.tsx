@@ -5,8 +5,12 @@ export default function TechStacks() {
     { name: "Node", icon: "nodejs/nodejs-plain.svg" },
     { name: "Express", icon: "express/express-original.svg" },
     { name: "Java", icon: "java/java-original-wordmark.svg" },
-    { name: "Laravel", icon: "laravel/laravel-original.svg" },
     { name: "JavaScript", icon: "javascript/javascript-original.svg" },
+    { name: "GIT", icon: "git/git-original.svg" },
+    {
+      name: "AWS",
+      icon: "amazonwebservices/amazonwebservices-original-wordmark.svg",
+    },
     { name: "TypeScript", icon: "typescript/typescript-original.svg" },
     { name: "Nextjs", icon: "nextjs/nextjs-original.svg" },
     { name: "React", icon: "react/react-original.svg" },
@@ -19,8 +23,6 @@ export default function TechStacks() {
     { name: "Tailwind", icon: "tailwindcss/tailwindcss-original.svg" },
     { name: "Material UI", icon: "materialui/materialui-plain.svg" },
     { name: "Bootstrap", icon: "bootstrap/bootstrap-original-wordmark.svg" },
-    { name: "GIT", icon: "git/git-original.svg" },
-    { name: "Github", icon: "github/github-original.svg" },
   ];
 
   // Devicons using CDN
