@@ -36,8 +36,8 @@ export async function POST(req: NextRequest) {
   const forwarded = req.headers.get("x-forwarded-for");
   const visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
 
-  const API_KEY = process.env.IPSTACK_KEY;
-  let url = `https://api.ipstack.com/${visitorIp}?access_key=${API_KEY}&hostname=1`;
+  const API_KEY = process.env.IPINFO_KEY;
+  let url = `https://api.ipinfo.io/lite/${visitorIp}?token=${API_KEY}`;
 
   // ------------------------------------------------
   // DEVELOPMENT MODE: Get the local machine IP address
@@ -46,12 +46,14 @@ export async function POST(req: NextRequest) {
     process.env.NODE_ENV === "development" &&
     (visitorIp === "::1" || visitorIp === "127.0.0.1")
   ) {
-    url = `https://api.ipstack.com/check?access_key=${API_KEY}&hostname=1`;
+    url = `https://api.ipify.org?format=json`;
   }
+
+  console.log("IP ADDRESS", visitorIp);
   try {
     // -----------------------------
-    //  IPSTACK API
-    //  Get the visitors IP address, country, city, and more.
+    //  IPINFO API or IPFY in Dev mode
+    //  Get the visitors IP address, country, code
     // -----------------------------
     const response = await fetch(url);
     const ipData = await response.json();
@@ -60,9 +62,7 @@ export async function POST(req: NextRequest) {
     // FALLBACK: If API fails, ensure ipData has enough structure
     // ------------------------------------------------
     if (!response.ok || ipData.error) {
-      console.warn(
-        "IPStack failed or limit reached. Proceeding with fallback data."
-      );
+      console.warn("Failed to get IP API Error.", ipData.error);
     }
 
     // -----------------------------
@@ -85,17 +85,16 @@ export async function POST(req: NextRequest) {
       {
         $inc: { visit_count: 1 }, // Increments if found, starts at 1 if new
         $set: {
-          hostname: ipData.hostname,
-          continent_code: ipData.continent_code,
-          continent_name: ipData.continent_name,
+          asn: ipData.asn,
+          hostname: ipData.as_domain,
+          continent: ipData.continent,
+          country: ipData.country,
           country_code: ipData.country_code,
-          country_name: ipData.country_name,
-          region_code: ipData.region_code,
-          region_name: ipData.region_name,
-          city: ipData.city,
-          latitude: ipData.latitude,
-          longitude: ipData.longitude,
-          country_flag: ipData.location?.country_flag || null,
+          continent_code: ipData.continent_code,
+          // city: ipData.city,
+          // latitude: ipData.latitude,
+          // longitude: ipData.longitude,
+          // country_flag: ipData.location?.country_flag || null,
           updatedAt: new Date(),
         },
         $setOnInsert: {
@@ -110,10 +109,10 @@ export async function POST(req: NextRequest) {
       }
     );
 
-    console.log("MONGODB_SAVE_SUCCESS", {
-      visitor_logged: updatedVisitor._id.toString(),
-      time: new Date().toISOString(),
-    });
+    // console.log("MONGODB_SAVE_SUCCESS", {
+    //   visitor_logged: updatedVisitor._id.toString(),
+    //   time: new Date().toISOString(),
+    // });
 
     // -----------------------------
     //  RETURN RESPONSE
