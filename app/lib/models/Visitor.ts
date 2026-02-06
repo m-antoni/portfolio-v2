@@ -2,17 +2,12 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 
 export interface IVisitor extends Document {
   ip: string;
+  asn: string;
   hostname?: string;
-  continent_code?: string;
-  continent_name?: string;
+  country?: string;
   country_code?: string;
-  country_name?: string;
-  region_code?: string;
-  region_name?: string;
-  city?: string;
-  latitude?: number;
-  longitude?: number;
-  country_flag?: string;
+  continent?: string;
+  continent_code?: string;
   visit_count: number;
   createdAt: Date;
   updatedAt: Date;
@@ -22,17 +17,12 @@ export interface IVisitor extends Document {
 const VisitorSchema: Schema = new Schema(
   {
     ip: { type: String, required: true, trim: true, index: true },
+    asn: { type: String },
     hostname: { type: String, trim: true },
-    continent_code: { type: String, trim: true, index: true },
-    continent_name: { type: String, trim: true },
+    country: { type: String, trim: true },
     country_code: { type: String, trim: true, index: true },
-    country_name: { type: String, trim: true },
-    region_code: { type: String, trim: true },
-    region_name: { type: String, trim: true },
-    city: { type: String, trim: true },
-    latitude: { type: Number },
-    longitude: { type: Number },
-    country_flag: { type: String, trim: true },
+    continent: { type: String, trim: true },
+    continent_code: { type: String, trim: true, index: true },
     visit_count: {
       type: Number,
       default: 1,

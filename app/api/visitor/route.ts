@@ -7,24 +7,19 @@
  * per IP address per calendar day.
  *
  * Key Features & Logic:
- * 1.  Real-time Geolocation: Fetches data via ipstack API (IP, City, Country,
- * Coordinates, and Hostname).
+ * 1.  Real-time Geolocation: Fetches data via IPINFO API
  * 2.  Daily Upsert Logic: Uses MongoDB `findOneAndUpdate` with `upsert: true`.
  * It searches for an existing record matching both the visitor's [IP] and
  * the [dateString] (YYYY-MM-DD).
  * 3.  Visit Counter: Automatically increments `visit_count` for every repeat
  * visit by the same user within the same day.
- * 4.  Data Flattening: Extracts nested location properties (like 'country_flag')
- * to maintain a flat, performant database schema.
- * 5.  State Management: Utilizes $setOnInsert for immutable fields (createdAt)
+ * 5. Utilizes $setOnInsert for immutable fields (createdAt)
  * and $set for mutable fields (hostname, location data) to ensure
  * data accuracy over time.
  *
  * Technical Notes:
  * - Tracking Method: Identifies unique daily sessions via `dateString`.
  * - Persistence: Connects to MongoDB via a dedicated connection utility.
- * - Reliability: Environment-variable based (IPSTACK_KEY) with robust error
- * handling for API failures or database connection timeouts.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -34,30 +29,29 @@ import Visitor from "@/app/lib/models/Visitor";
 export async function POST(req: NextRequest) {
   // Get the visitor's real IP from Vercel's headers
   const forwarded = req.headers.get("x-forwarded-for");
-  const visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
-
-  const API_KEY = process.env.IPINFO_KEY;
-  let url = `https://api.ipinfo.io/lite/${visitorIp}?token=${API_KEY}`;
+  let visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
 
   // ------------------------------------------------
   // DEVELOPMENT MODE: Get the local machine IP address
   // ------------------------------------------------
-  if (
-    process.env.NODE_ENV === "development" &&
-    (visitorIp === "::1" || visitorIp === "127.0.0.1")
-  ) {
-    url = `https://api.ipify.org?format=json`;
+  if (process.env.NODE_ENV === "development") {
+    const urlIPify = `https://api.ipify.org?format=json`;
+    const urlIPifyResponse = await fetch(urlIPify);
+    const json = await urlIPifyResponse.json();
+    visitorIp = json.ip;
   }
 
-  console.log("IP ADDRESS", visitorIp);
   try {
     // -----------------------------
     //  IPINFO API or IPFY in Dev mode
     //  Get the visitors IP address, country, code
     // -----------------------------
+    const API_KEY = process.env.IPINFO_KEY;
+    const url = `https://api.ipinfo.io/lite/${visitorIp}?token=${API_KEY}`;
+
     const response = await fetch(url);
     const ipData = await response.json();
-
+    console.log("IP API", ipData);
     // ------------------------------------------------
     // FALLBACK: If API fails, ensure ipData has enough structure
     // ------------------------------------------------
@@ -91,10 +85,6 @@ export async function POST(req: NextRequest) {
           country: ipData.country,
           country_code: ipData.country_code,
           continent_code: ipData.continent_code,
-          // city: ipData.city,
-          // latitude: ipData.latitude,
-          // longitude: ipData.longitude,
-          // country_flag: ipData.location?.country_flag || null,
           updatedAt: new Date(),
         },
         $setOnInsert: {
@@ -109,27 +99,23 @@ export async function POST(req: NextRequest) {
       }
     );
 
-    // console.log("MONGODB_SAVE_SUCCESS", {
-    //   visitor_logged: updatedVisitor._id.toString(),
-    //   time: new Date().toISOString(),
-    // });
-
     // -----------------------------
     //  RETURN RESPONSE
     // -----------------------------
     return NextResponse.json(
       {
         success: true,
-        id: updatedVisitor._id.toString(),
+        // visitor_id: updatedVisitor._id.toString(),
         visitor_ip_address: updatedVisitor.ip,
-        visitor_country: updatedVisitor.country_name,
-        visitor_city: updatedVisitor.city,
+        visit_hostname: updatedVisitor.hostname,
+        visitor_country: updatedVisitor.country,
+        visitor_continent: updatedVisitor.continent,
         visit_count: updatedVisitor.visit_count,
       },
       { status: 201 }
     );
   } catch (error) {
-    console.error("[VISITOR API ERROR]:", error);
+    console.error("[VISITOR DETAILS ERROR]:", error);
     return NextResponse.json(
       { message: "Unexpected server error." },
       { status: 500 }
