@@ -7,7 +7,7 @@
  * per IP address per calendar day.
  *
  * Key Features & Logic:
- * 1.  Real-time Geolocation: Fetches data via IPINFO API
+ * 1.  Real-time Geolocation: Fetches data via IP API
  * 2.  Daily Upsert Logic: Uses MongoDB `findOneAndUpdate` with `upsert: true`.
  * It searches for an existing record matching both the visitor's [IP] and
  * the [dateString] (YYYY-MM-DD).
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   let visitorIp = forwarded ? forwarded.split(",")[0] : "127.0.0.1";
 
   // ------------------------------------------------
-  // DEVELOPMENT MODE: Get the local machine IP address
+  // DEVELOPMENT MODE: Get the local machine IP address using ipify
   // ------------------------------------------------
   if (process.env.NODE_ENV === "development") {
     const urlIPify = `https://api.ipify.org?format=json`;
@@ -43,15 +43,12 @@ export async function POST(req: NextRequest) {
 
   try {
     // -----------------------------
-    //  IPINFO API or IPFY in Dev mode
     //  Get the visitors IP address, country, code
     // -----------------------------
-    const API_KEY = process.env.IPINFO_KEY;
-    const url = `https://api.ipinfo.io/lite/${visitorIp}?token=${API_KEY}`;
+    const url = `https://free.freeipapi.com/api/json/${visitorIp}`;
 
     const response = await fetch(url);
     const ipData = await response.json();
-    console.log("IP API", ipData);
     // ------------------------------------------------
     // FALLBACK: If API fails, ensure ipData has enough structure
     // ------------------------------------------------
@@ -73,18 +70,24 @@ export async function POST(req: NextRequest) {
     const updatedVisitor = await Visitor.findOneAndUpdate(
       {
         ip: ipData.ip || visitorIp,
-        // This is key: it looks for an entry for THIS IP created TODAY
         dateString: today,
       },
       {
-        $inc: { visit_count: 1 }, // Increments if found, starts at 1 if new
+        $inc: { visit_count: 1 }, // Increments if IP is found, starts at 1 if new
         $set: {
           asn: ipData.asn,
-          hostname: ipData.as_domain,
+          asn_organization: ipData.asnOrganization,
           continent: ipData.continent,
-          country: ipData.country,
-          country_code: ipData.country_code,
+          country: ipData.countryName,
+          country_code: ipData.countryCode,
           continent_code: ipData.continent_code,
+          capital: ipData.capital,
+          city_name: ipData.cityName,
+          region_name: ipData.regionName,
+          zipcode: ipData.zipcode,
+          is_proxy: ipData.isProxy,
+          latitude: ipData.latitude,
+          longitude: ipData.longitude,
           updatedAt: new Date(),
         },
         $setOnInsert: {
@@ -105,11 +108,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        // visitor_id: updatedVisitor._id.toString(),
-        visitor_ip_address: updatedVisitor.ip,
-        visit_hostname: updatedVisitor.hostname,
-        visitor_country: updatedVisitor.country,
-        visitor_continent: updatedVisitor.continent,
+        ip_address: updatedVisitor.ip,
+        asn_organization: updatedVisitor.asn_organization,
+        country: updatedVisitor.country,
+        region: updatedVisitor.region_name,
+        continent: updatedVisitor.continent,
+        city_name: updatedVisitor.city_name,
+        zipcode: updatedVisitor.zipcode,
+        latitude: updatedVisitor.latitude,
+        longitude: updatedVisitor.longitude,
         visit_count: updatedVisitor.visit_count,
       },
       { status: 201 }
