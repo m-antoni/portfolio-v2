@@ -16,6 +16,7 @@
  * 5. Utilizes $setOnInsert for immutable fields (createdAt)
  * and $set for mutable fields (hostname, location data) to ensure
  * data accuracy over time.
+ * 6. Send Email Notification using nodemailer
  *
  * Technical Notes:
  * - Tracking Method: Identifies unique daily sessions via `dateString`.
@@ -25,6 +26,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/app/lib/dbConnect";
 import Visitor from "@/app/lib/models/Visitor";
+import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   // Get the visitor's real IP from Vercel's headers
@@ -84,7 +86,7 @@ export async function POST(req: NextRequest) {
           capital: ipData.capital,
           city_name: ipData.cityName,
           region_name: ipData.regionName,
-          zipcode: ipData.zipcode,
+          zipcode: ipData.zipCode,
           is_proxy: ipData.isProxy,
           latitude: ipData.latitude,
           longitude: ipData.longitude,
@@ -101,6 +103,110 @@ export async function POST(req: NextRequest) {
         setDefaultsOnInsert: true,
       }
     );
+
+    // -----------------------------
+    //  NODE MAILER
+    // -----------------------------
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    // -----------------------------
+    // SEND NOTIFICATION EMAIL
+    // -----------------------------
+    // IMPORTANT: Use 'await' here to ensure the email sends before the serverless function shuts down.
+    await transporter.sendMail({
+      from: `"Portfolio Website" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER,
+      subject: `[Portfolio] Visitor`,
+      text: `Portfolio`,
+      html: `
+     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 3px; overflow: hidden;">
+          <div style="background-color: #121212; color: white; padding: 15px; text-align: center;">
+            <h2 style="margin: 0; font-size: 18px;">Portfolio Website (Visitor)</h2>
+          </div>
+          <div style="padding: 20px;">
+            <p style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
+              <strong>Date :</strong> ${new Date().toLocaleString("en-US", {
+                timeZone: "Asia/Manila",
+              })}
+            </p>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Website:</strong></td>
+                    <td style="padding: 8px 0;">
+                    <a href="${
+                      process.env.NEXT_PUBLIC_BASE_URL
+                    }" style="color: #007BFF; text-decoration: none;">${
+        process.env.NEXT_PUBLIC_BASE_URL
+      }</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>IP Address:</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.ip}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Hostname:</strong></td>
+                    <td style="padding: 8px 0;">${
+                      updatedVisitor.asn_organization
+                    }</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Country:</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.country} | ${
+        updatedVisitor.country_code
+      }</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 140px;"><strong>Region:</strong></td>
+                    <td style="padding: 8px 0;">
+                        ${updatedVisitor.region_name}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 140px;"><strong>Capital:</strong></td>
+                    <td style="padding: 8px 0;">
+                        ${updatedVisitor.capital}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>City:</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.city_name}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Zipcode:</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.zipcode}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Latitude:</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.latitude}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Longitude</strong></td>
+                    <td style="padding: 8px 0;">${updatedVisitor.longitude}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 0; width: 120px;"><strong>Visit Count(s):</strong></td>
+                    <td style="padding: 8px 0;">${
+                      updatedVisitor.visit_count
+                    }</td>
+                </tr>
+            </table>
+          </div>
+          <div style="background-color: #f1f1f1; color: #6c757d; padding: 10px; text-align: center; font-size: 12px;">
+            Automated notification via NodeMailer.
+          </div>
+        </div>
+        `,
+    });
 
     // -----------------------------
     //  RETURN RESPONSE
